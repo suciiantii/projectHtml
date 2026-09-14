@@ -1,0 +1,337 @@
+/* ==========================================
+   RESET & DASAR UTAMA
+   ========================================== */
+/* Reset CSS untuk menyamakan tampilan di semua browser */
+* {
+    margin: 0;                          /* Menghapus jarak luar bawaan browser */
+    padding: 0;                         /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box;             /* Memastikan ukuran elemen dihitung termasuk padding & border */
+}
+
+/* Gaya dasar untuk elemen body halaman login */
+body {
+    font-family: Arial, sans-serif;     /* Jenis font utama halaman */
+    background-color: #fcf8f5;          /* Warna latar belakang utama krem halus */
+    color: #2b2320;                     /* Warna teks utama cokelat tua pekat */
+    min-height: 100vh;                  /* Tinggi minimal body memenuhi tinggi layar monitor */
+}
+
+/* ==========================================
+   LAYOUT UTAMA (2 KOLOM)
+   ========================================== */
+/* Layout Pembungkus Halaman Login (2 Kolom Sejajar) */
+.login-page {
+    min-height: 100vh;                  /* Tinggi minimal halaman login memenuhi layar */
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: 1fr 1fr;      /* Membagi halaman menjadi 2 kolom sama lebar (kiri & kanan) */
+}
+
+/* ==========================================
+   BAGIAN KANAN / KIRI (VIDEO BACKGROUND)
+   ========================================== */
+/* Wadah Visual Video Background Sisi Kiri */
+.gambar {
+    min-height: 100vh;                  /* Tinggi minimal wadah visual memenuhi tinggi layar */
+    padding: 50px;                      /* Jarak dalam wadah visual sisi kiri */
+    color: white;                       /* Warna teks default pada latar belakang video dibuat putih */
+    position: relative;                 /* Patokan posisi untuk elemen overlay dan konten melayang */
+    overflow: hidden;                   /* Menjaga agar video tidak meluap keluar dari wadah */
+    background-color: #2b2320;          /* Warna latar cadangan cokelat gelap pekat jika video gagal dimuat */
+}
+
+/* Video Background Memenuhi Area */
+.video-login {
+    position: absolute;                 /* Posisi video melayang memenuhi wadah */
+    top: 0;                             /* Posisi dari paling atas wadah */
+    left: 0;                            /* Posisi dari paling kiri wadah */
+    width: 100%;                        /* Lebar video memenuhi area 100% */
+    height: 100%;                       /* Tinggi video memenuhi area 100% */
+    object-fit: cover;                  /* Video dipotong rapi memenuhi layar tanpa gepeng */
+    z-index: 0;                         /* Penumpukan paling dasar di belakang teks */
+}
+
+/* Overlay Transparan Supaya Teks Jelas Ditulis */
+.overlay {
+    position: absolute;                 /* Posisi lapisan transparan melayang di atas video */
+    top: 0;                             /* Posisi dari paling atas wadah */
+    left: 0;                            /* Posisi dari paling kiri wadah */
+    width: 100%;                        /* Lebar lapisan transparan 100% */
+    height: 100%;                       /* Tinggi lapisan transparan 100% */
+    background: rgba(43, 35, 32, 0.55); /* Warna lapisan cokelat gelap transparan 55% */
+    backdrop-filter: blur(2px);         /* Efek sedikit pemburaman di belakang teks */
+    z-index: 1;                         /* Penumpukan di atas video tetapi di bawah teks */
+}
+
+/* Konten Teks di Atas Overlay Video */
+.isi-gambar {
+    position: relative;                 /* Posisi relatif di atas lapisan overlay */
+    z-index: 2;                         /* Penumpukan di atas overlay agar teks terbaca jelas */
+    min-height: calc(100vh - 100px);    /* Tinggi minimal memperhitungkan padding atas-bawah */
+    display: flex;                      /* Flexbox untuk menyusun logo, teks, dan hiasan */
+    flex-direction: column;             /* Arah susunan elemen ke bawah vertikal */
+    justify-content: space-between;     /* Memberi jarak merata di antara logo dan teks bawah */
+    align-items: flex-start;            /* Rataan elemen dimulai dari sisi paling kiri */
+}
+
+/* Teks Logo Brand di Halaman Login */
+.logo span {
+    font-family: Georgia, serif;        /* Jenis font klasik logo */
+    font-size: clamp(45px, 5vw, 70px);  /* Ukuran font responsif menyesuaikan lebar layar */
+    font-weight: normal;                /* Berat huruf logo normal */
+    letter-spacing: 4px;                /* Jarak antar huruf pada logo */
+    line-height: 1;                     /* Rapat baris logo */
+}
+
+/* Sub-teks Kecil di Bawah Logo */
+.logo small {
+    display: block;                     /* Mengubah sub-teks logo jadi elemen blok */
+    margin-top: 10px;                   /* Jarak atas dari judul logo */
+    font-size: 10px;                    /* Ukuran font sub-teks logo */
+    letter-spacing: 4px;                /* Jarak antar huruf sub-teks logo */
+    color: #e8a598;                     /* Warna sub-teks logo dusty pink */
+    font-weight: bold;                  /* Mencetak tebal sub-teks logo */
+}
+
+/* Wadah Teks Pesan Pembuka di Sisi Kiri */
+.teks-gambar {
+    max-width: 450px;                   /* Lebar maksimal wadah teks pembuka */
+}
+
+/* Judul Utama Teks Pembuka di Sisi Kiri */
+.teks-gambar h1 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul pembuka */
+    font-size: clamp(50px, 6vw, 75px);  /* Ukuran font judul responsif menyesuaikan layar */
+    font-weight: normal;                /* Berat huruf judul normal */
+    line-height: 1.05;                  /* Rapat baris judul pembuka */
+}
+
+/* Cetak Miring pada Judul Pembuka */
+.teks-gambar h1 i {
+    color: #e8a598;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Paragraf Deskripsi di Sisi Kiri */
+.deskripsi-kiri {
+    display: block;                     /* Mengubah deskripsi jadi elemen blok */
+    margin-top: 20px;                   /* Jarak atas paragraf dari judul */
+    font-size: 14px;                    /* Ukuran font teks deskripsi kiri */
+    color: #f0e4dd;                     /* Warna teks deskripsi krem terang */
+    line-height: 1.7;                   /* Jarak antar baris kalimat */
+}
+
+/* Teks Simbol Hiasan Dekorasi */
+.hiasan {
+    font-size: 16px;                    /* Ukuran font teks dekorasi */
+    letter-spacing: 8px;                /* Jarak antar huruf simbol dekorasi */
+    color: #e8a598;                     /* Warna simbol dekorasi dusty pink */
+}
+
+/* ==========================================
+   BAGIAN KANAN (FORM LOGIN & REGISTER)
+   ========================================== */
+/* Seksi Formulir di Sisi Kanan */
+.form-section {
+    min-height: 100vh;                  /* Tinggi minimal seksi form memenuhi tinggi layar */
+    padding: 60px 10% 30px;             /* Jarak dalam seksi form (atas 60px, samping 10%, bawah 30px) */
+    background-color: #ffffff;          /* Warna latar belakang seksi form putih */
+    display: flex;                      /* Flexbox untuk menyusun header, form, dan footer */
+    flex-direction: column;             /* Arah susunan elemen ke bawah vertikal */
+    justify-content: space-between;     /* Memberi jarak merata atas-bawah */
+}
+
+/* Kotak Utam Pembungkus Isian Form */
+.box {
+    width: 100%;                        /* Lebar kotak memenuhi area */
+    max-width: 400px;                   /* Lebar batas maksimal kotak form 400px */
+    margin: auto 0;                     /* Posisi kotak otomatis di tengah vertikal */
+}
+
+/* Header Bagian Atas Form (Tombol Kembali & Dark Mode) */
+.login-top-actions {
+    display: flex;                      /* Flexbox untuk menata tombol kembali dan ikon sejajar */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: space-between;     /* Jarak merata kiri-kanan antara tombol kembali & ikon */
+    margin-bottom: 30px;                /* Jarak bawah header ke isi form */
+}
+
+/* Reset Jarak Bawah Tombol Kembali di Dalam Top Actions */
+.login-top-actions .page-back {
+    margin-bottom: 0;                   /* Menghapus jarak bawah tombol kembali */
+}
+
+/* Tombol Ikon Dark Mode / Navigasi */
+.nav-icon {
+    width: 38px;                        /* Lebar tombol ikon */
+    height: 38px;                       /* Tinggi tombol ikon */
+    border: 1px solid #eeded5;          /* Garis tepi tipis tombol ikon */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran sempurna */
+    background-color: #fcf8f5;          /* Warna latar belakang tombol ikon krem muda */
+    color: #6b5c56;                     /* Warna ikon di dalam tombol */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    display: flex;                      /* Flexbox untuk menata ikon di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+    flex-shrink: 0;                     /* Mencegah tombol ikon menyusut */
+}
+
+/* Tombol Kembali ke Halaman Utama */
+.page-back {
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: transparent;            /* Latar belakang tombol dibuat transparan */
+    color: #6b5c56;                     /* Warna teks tombol kembali */
+    font-size: 11px;                    /* Ukuran font teks tombol kembali */
+    font-weight: bold;                  /* Mencetak tebal teks tombol kembali */
+    letter-spacing: 2px;                /* Jarak antar huruf pada tombol kembali */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    margin-bottom: 30px;                /* Jarak bawah tombol dari judul form */
+    display: flex;                      /* Menata ikon dan teks tombol sejajar */
+    align-items: center;                /* Posisi di tengah vertikal */
+    transition: all 0.3s ease;          /* Transisi animasi saat tombol di-hover */
+}
+
+/* Efek Hover Tombol Kembali */
+.page-back:hover {
+    color: #e8a598;                     /* Teks berubah warna dusty pink saat di-hover */
+    transform: translateX(-4px);        /* Tombol bergeser 4px ke kiri saat di-hover */
+}
+
+/* Judul Penanda Kecil Form */
+.judul-kecil {
+    font-size: 10px;                    /* Ukuran font judul penanda kecil */
+    letter-spacing: 3px;                /* Jarak antar huruf judul penanda */
+    color: #d67b68;                     /* Warna judul penanda dusty pink pekat */
+    font-weight: bold;                  /* Mencetak tebal teks judul penanda */
+    margin-bottom: 10px;                /* Jarak bawah ke judul utama form */
+}
+
+/* Judul Utama Form Login / Register */
+.box h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul form */
+    font-size: 36px;                    /* Ukuran font judul form */
+    font-weight: normal;                /* Berat huruf judul normal */
+    color: #2b2320;                     /* Warna teks judul form cokelat tua */
+    margin-bottom: 10px;                /* Jarak bawah judul ke deskripsi */
+}
+
+/* Deskripsi Teks Petunjuk Form */
+.deskripsi {
+    font-size: 14px;                    /* Ukuran font deskripsi form */
+    color: #6b5c56;                     /* Warna teks deskripsi form */
+    line-height: 1.6;                   /* Jarak antar baris kalimat */
+    margin-bottom: 30px;                /* Jarak bawah deskripsi ke kolom input */
+}
+
+/* Kelompok Input Field Form */
+.input {
+    margin-bottom: 22px;                /* Jarak bawah antar kolom input form */
+}
+
+/* Label Teks Kolom Input Form */
+.input label {
+    display: block;                     /* Mengubah label jadi elemen blok */
+    font-size: 10px;                    /* Ukuran font label input */
+    letter-spacing: 2px;                /* Jarak antar huruf pada label */
+    font-weight: bold;                  /* Mencetak tebal teks label */
+    color: #2b2320;                     /* Warna teks label cokelat tua */
+    margin-bottom: 8px;                 /* Jarak bawah label ke kolom ketikan */
+}
+
+/* Element Input Ketikan Form Login / Register */
+.input input {
+    width: 100%;                        /* Lebar kolom input memenuhi kotak form */
+    padding: 12px 0;                    /* Jarak dalam atas-bawah kolom input */
+    border: none;                       /* Menghapus garis tepi atas, kiri, dan kanan */
+    border-bottom: 1px solid #eeded5;    /* Garis pembatas bawah saja tipis warna krem */
+    background: transparent;            /* Latar belakang input dibuat transparan */
+    outline: none;                      /* Menghapus outline bawaan browser saat diklik */
+    font-size: 14px;                    /* Ukuran font teks ketikan input */
+    color: #2b2320;                     /* Warna teks ketikan cokelat tua */
+    transition: border-color 0.3s ease; /* Transisi warna garis bawah halus saat diklik */
+}
+
+/* Garis Bawah Input saat Difokuskan / Diketik */
+.input input:focus {
+    border-bottom-color: #2b2320;       /* Garis bawah berubah cokelat tua saat diklik/diketik */
+}
+
+/* Pesan Teks Notifikasi Error / Sukses JS */
+#pesan,
+#pesanDaftar {
+    min-height: 20px;                   /* Tinggi minimal tempat pesan notifikasi */
+    margin-bottom: 10px;                /* Jarak bawah pesan notifikasi ke tombol */
+    color: #d67b68;                     /* Warna teks notifikasi dusty pink pekat */
+    font-size: 12px;                    /* Ukuran font teks notifikasi */
+    font-weight: bold;                  /* Mencetak tebal teks notifikasi */
+}
+
+/* Tombol Submit Utama Form Login / Register */
+.tombol {
+    width: 100%;                        /* Lebar tombol memenuhi kotak form */
+    padding: 16px 24px;                 /* Jarak dalam tombol submit */
+    border: none;                       /* Menghapus garis tepi tombol */
+    border-radius: 30px;                /* Sudut tombol dibuat membulat penuh */
+    background-color: #2b2320;          /* Warna latar belakang tombol cokelat tua */
+    color: white;                       /* Warna teks tombol putih */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    display: flex;                      /* Menata teks tombol dan panah sejajar */
+    justify-content: space-between;     /* Jarak merata kiri-kanan teks & ikon panah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    font-size: 11px;                    /* Ukuran font teks tombol submit */
+    letter-spacing: 2px;                /* Jarak antar huruf pada tombol */
+    font-weight: bold;                  /* Mencetak tebal teks tombol submit */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus saat di-hover */
+    box-shadow: 0 4px 15px rgba(43, 35, 32, 0.15); /* Bayangan lembut di bawah tombol */
+}
+
+/* Efek Hover Tombol Submit Form */
+.tombol:hover {
+    background-color: #e8a598;          /* Warna latar berubah dusty pink saat di-hover */
+    box-shadow: 0 6px 20px rgba(232, 165, 152, 0.4); /* Bayangan kemerahan lembut saat di-hover */
+    transform: translateY(-2px);        /* Tombol terangkat 2px ke atas saat di-hover */
+}
+
+/* Ikon Panah di Dalam Tombol Submit */
+.tombol span:last-child {
+    font-size: 18px;                    /* Ukuran font ikon panah di tombol */
+}
+
+/* Seksi Pengalih (Switcher) Antara Form Login & Register */
+.daftar {
+    margin-top: 25px;                   /* Jarak atas dari tombol submit */
+    display: flex;                      /* Flexbox untuk menata pertanyaan & tombol switcher sejajar */
+    justify-content: center;            /* Posisi di tengah horizontal */
+    gap: 6px;                           /* Jarak antar teks dan tombol switcher */
+    font-size: 13px;                    /* Ukuran font teks pertanyaan */
+    color: #6b5c56;                     /* Warna teks pertanyaan switcher */
+}
+
+/* Tombol Teks Pengalih Form (Daftar / Masuk) */
+.daftar button {
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: none;                   /* Latar belakang dibuat transparan */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    color: #2b2320;                     /* Warna teks tombol switcher cokelat tua */
+    font-weight: bold;                  /* Mencetak tebal teks tombol switcher */
+    transition: color 0.3s ease;        /* Transisi warna halus saat di-hover */
+}
+
+/* Efek Hover Tombol Switcher Form */
+.daftar button:hover {
+    color: #e8a598;                     /* Warna teks berubah dusty pink saat di-hover */
+}
+
+/* Utility Class untuk Menyembunyikan Form yang Tidak Aktif */
+.sembunyi {
+    display: none;                      /* Disembunyikan secara penuh dari layar */
+}
+
+/* Seksi Footer Halaman Login */
+footer {
+    display: flex;                      /* Flexbox untuk menata teks footer sejajar */
+    justify-content: space-between;     /* Jarak merata antara teks hak cipta & bantuan */
+    font-size: 10px;                    /* Ukuran font teks footer */
+    color: #b5a299;                     /* Warna teks footer pudar */
+    letter-spacing: 1px;                /* Jarak antar huruf pada footer */
+    margin-top: 40px;                   /* Jarak luar atas footer dari form */
+}
+

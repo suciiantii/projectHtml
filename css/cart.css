@@ -1,0 +1,688 @@
+/* ==========================================
+   RESET & DASAR HALAMAN KERANJANG
+   ========================================== */
+/* Reset CSS untuk menyamakan tampilan di semua browser */
+* {
+    margin: 0;                          /* Menghapus jarak luar bawaan browser */
+    padding: 0;                         /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box;             /* Memastikan ukuran elemen dihitung termasuk padding & border */
+}
+
+/* Gaya dasar untuk elemen body halaman keranjang */
+body {
+    font-family: Arial, sans-serif;     /* Jenis font utama halaman */
+    background-color: #f8f2ed;          /* Warna latar belakang utama krem lembut */
+    color: #302a27;                     /* Warna teks utama cokelat tua */
+    line-height: 1.6;                   /* Jarak antar baris kalimat */
+}
+
+/* ==========================================
+   BILAH NAVIGASI
+   ========================================== */
+/* Bilah Navigasi Atas Halaman Keranjang */
+.bilah-navigasi {
+    min-height: 75px;                   /* Tinggi minimal bilah navigasi */
+    padding: 18px 7%;                   /* Jarak dalam navigasi (atas-bawah 18px, kiri-kanan 7%) */
+    background-color: #fffdfb;          /* Warna latar belakang navigasi krem muda */
+    border-bottom: 1px solid #eee3dc;   /* Garis pembatas tipis di bagian bawah navigasi */
+    display: flex;                      /* Flexbox untuk tata letak sejajar */
+    align-items: center;                /* Menyejajarkan posisi elemen di tengah vertikal */
+    justify-content: space-between;     /* Memberi jarak merata di antara logo dan menu kanan */
+    box-shadow: 0 4px 20px rgba(48, 42, 39, 0.04); /* Bayangan lembut di bawah navigasi */
+}
+
+/* Teks Logo LÉSCIA di Navigasi */
+.logo-navigasi {
+    color: #302a27;                     /* Warna teks logo cokelat tua */
+    text-decoration: none;              /* Menghapus garis bawah tautan logo */
+    font-size: 22px;                    /* Ukuran font teks logo */
+    font-weight: bold;                  /* Mencetak tebal teks logo */
+    letter-spacing: 5px;                /* Jarak antar huruf pada logo */
+}
+
+/* Wadah Menu Navigasi Sisi Kanan */
+.menu-navigasi-kanan {
+    display: flex;                      /* Menyusun elemen navigasi kanan secara horizontal */
+    align-items: center;                /* Menyejajarkan elemen di tengah vertikal */
+    gap: 15px;                          /* Jarak antar kelompok tombol navigasi kanan */
+}
+
+/* Wadah Tombol Aksi di Navigasi Keranjang */
+.cart-nav-actions {
+    display: flex;                      /* Menyusun tombol aksi secara horizontal */
+    align-items: center;                /* Menyejajarkan tombol di tengah vertikal */
+    gap: 12px;                          /* Jarak antar tombol aksi */
+}
+
+/* Tombol Ikon Navigasi Lingkaran */
+.nav-icon {
+    width: 40px;                        /* Lebar tombol ikon */
+    height: 40px;                       /* Tinggi tombol ikon */
+    border: 1px solid #ded2cb;          /* Garis pinggir tipis tombol ikon */
+    border-radius: 50%;                 /* Membuat bentuk tombol menjadi lingkaran sempurna */
+    background-color: #f8f2ed;          /* Warna latar belakang tombol ikon */
+    color: #806d63;                     /* Warna ikon di dalam tombol */
+    cursor: pointer;                    /* Kursor berubah bentuk tangan saat ditunjuk */
+    display: flex;                      /* Flexbox untuk menata ikon di tengah */
+    align-items: center;                /* Menyejajarkan ikon di tengah vertikal */
+    justify-content: center;            /* Menyejajarkan ikon di tengah horizontal */
+}
+
+/* Tombol Profil Pengguna */
+.tombol-profil {
+    background: transparent;            /* Latar belakang tombol dibuat transparan */
+    border: none;                       /* Menghapus garis tepi tombol */
+    color: #806d63;                     /* Warna ikon tombol profil */
+    cursor: pointer;                    /* Kursor berubah bentuk tangan saat ditunjuk */
+    display: flex;                      /* Flexbox untuk penataan di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+    transition: all 0.3s ease;          /* Transisi animasi saat tombol di-hover */
+}
+
+/* Efek Hover Tombol Profil */
+.tombol-profil:hover {
+    color: #b98378;                     /* Warna ikon berubah dusty pink saat di-hover */
+    transform: scale(1.1);              /* Ikon sedikit membesar saat di-hover */
+}
+
+/* Tombol Kembali ke Halaman Sebelumnya */
+.tombol-kembali {
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: transparent;            /* Latar belakang tombol dibuat transparan */
+    color: #625650;                     /* Warna teks tombol kembali */
+    cursor: pointer;                    /* Kursor berubah bentuk tangan saat ditunjuk */
+    font-size: 11px;                    /* Ukuran font teks tombol kembali */
+    font-weight: bold;                  /* Mencetak tebal teks tombol kembali */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada tombol kembali */
+    transition: all 0.3s ease;          /* Transisi animasi saat di-hover */
+}
+
+/* Efek Hover Tombol Kembali */
+.tombol-kembali:hover {
+    color: #b98378;                     /* Warna teks berubah dusty pink saat di-hover */
+    transform: translateX(-3px);        /* Tombol bergeser 3px ke kiri saat di-hover */
+}
+
+/* ==========================================
+   PALA & HEADER HALAMAN
+   ========================================== */
+/* Wadah Pembungkus Utama Halaman Keranjang */
+.halaman-keranjang {
+    padding: 40px 7% 90px;              /* Jarak dalam halaman (atas 40px, samping 7%, bawah 90px) */
+    max-width: 1300px;                  /* Lebar batas maksimal area keranjang */
+    margin: 0 auto;                     /* Posisi halaman tepat di tengah layar */
+}
+
+/* Header Judul Halaman Keranjang */
+.pala-keranjang {
+    text-align: center;                 /* Rataan teks diatur di tengah */
+    margin-bottom: 35px;                /* Jarak bawah header ke konten keranjang */
+}
+
+/* Teks Penanda Kecil di Atas Judul Utama */
+.teks-kecil {
+    font-size: 10px;                    /* Ukuran font teks penanda kecil */
+    letter-spacing: 3px;                /* Jarak antar huruf pada teks penanda */
+    color: #b98378;                     /* Warna teks penanda dusty pink */
+    margin-bottom: 6px;                 /* Jarak bawah ke judul utama */
+    font-weight: bold;                  /* Mencetak tebal teks penanda */
+}
+
+/* Judul Utama Halaman Keranjang */
+.pala-keranjang h1 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul utama */
+    font-size: 48px;                    /* Ukuran font judul utama */
+    font-weight: normal;                /* Berat huruf judul normal */
+    color: #302a27;                     /* Warna teks judul cokelat tua */
+}
+
+/* Cetak Miring pada Judul Utama Keranjang */
+.pala-keranjang h1 i {
+    color: #b98378;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Subdeskripsi Teks Header Keranjang */
+.pala-keranjang p {
+    color: #8d817a;                     /* Warna teks deskripsi header */
+    font-size: 13px;                    /* Ukuran font deskripsi header */
+}
+
+/* ==========================================
+   KONTEN UTAMA KERANJANG
+   ========================================== */
+/* Grid Tata Letak Utama (Kiri Produk & Form, Kanan Ringkasan) */
+.konten-keranjang {
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: 1.7fr 1fr;   /* Membagi 2 kolom (kolom kiri lebih lebar dari kolom kanan) */
+    gap: 30px;                          /* Jarak antar kolom kiri dan kanan */
+    align-items: start;                 /* Penyejajaran elemen dimulai dari paling atas */
+}
+
+/* Wadah Sisi Kiri Keranjang */
+.bagian-kiri-keranjang {
+    display: flex;                      /* Menyusun elemen sisi kiri secara vertikal */
+    flex-direction: column;             /* Arah susunan elemen ke bawah */
+    gap: 20px;                          /* Jarak antar komponen di sisi kiri */
+}
+
+/* KOTAK PILIH SEMUA */
+.kotak-pilih-semua {
+    display: flex;                      /* Menata centang dan label sejajar */
+    align-items: center;                /* Penyejajaran vertikal di tengah */
+    gap: 12px;                          /* Jarak antara centang dengan label */
+    padding: 16px 22px;                 /* Jarak dalam kotak pilih semua */
+    background-color: #fffdfb;          /* Warna latar belakang kotak krem muda */
+    border-radius: 16px;                /* Sudut kotak dibuat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak pilih semua */
+    box-shadow: 0 4px 15px rgba(48, 42, 39, 0.03); /* Bayangan lembut di bawah kotak */
+}
+
+/* Label Teks Kotak Pilih Semua */
+.kotak-pilih-semua label {
+    font-size: 11px;                    /* Ukuran font label pilih semua */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada label */
+    color: #302a27;                     /* Warna teks label cokelat tua */
+    font-weight: bold;                  /* Mencetak tebal teks label */
+    cursor: pointer;                    /* Kursor berubah bentuk tangan saat ditunjuk */
+}
+
+/* DAFTAR PRODUK */
+.daftar-keranjang {
+    display: flex;                      /* Menyusun item-item keranjang vertikal */
+    flex-direction: column;             /* Arah susunan item ke bawah */
+    gap: 16px;                          /* Jarak antar item keranjang */
+}
+
+/* Tampilan Saat Keranjang Kosong */
+.keranjang-kosong {
+    padding: 30px;                      /* Jarak dalam wadah keranjang kosong */
+    text-align: center;                 /* Rataan teks diatur di tengah */
+    background-color: #fffdfb;          /* Warna latar belakang krem muda */
+    border-radius: 16px;                /* Sudut wadah dibuat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis wadah keranjang kosong */
+    color: #8d817a;                     /* Warna teks petunjuk keranjang kosong */
+    font-size: 14px;                    /* Ukuran font teks keranjang kosong */
+}
+
+/* Kotak Item Barang di Keranjang */
+.item-keranjang {
+    position: relative;                 /* Patokan posisi untuk tombol hapus */
+    display: flex;                      /* Menyusun elemen item secara horizontal */
+    align-items: center;                /* Penyejajaran elemen di tengah vertikal */
+    gap: 20px;                          /* Jarak antar elemen dalam item keranjang */
+    padding: 20px;                      /* Jarak dalam item keranjang */
+    background-color: #fffdfb;          /* Warna latar belakang item krem muda */
+    border-radius: 20px;                /* Sudut kotak item dibuat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak item */
+    box-shadow: 0 6px 20px rgba(48, 42, 39, 0.03); /* Bayangan lembut di bawah item */
+    transition: all 0.3s ease;          /* Transisi pergerakan/perubahan warna halus */
+}
+
+/* Efek Hover Pada Kotak Item Keranjang */
+.item-keranjang:hover {
+    border-color: #b98378;              /* Garis tepi berubah dusty pink saat di-hover */
+}
+
+/* Kotak Centang Checkbox Item */
+.centang-keranjang {
+    width: 18px;                        /* Lebar kotak centang */
+    height: 18px;                       /* Tinggi kotak centang */
+    accent-color: #302a27;              /* Warna centang saat aktif cokelat tua */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+}
+
+/* Pembungkus Gambar Barang di Keranjang */
+.gambar-item-keranjang {
+    width: 90px;                        /* Lebar pembungkus gambar */
+    height: 110px;                      /* Tinggi pembungkus gambar */
+    border-radius: 12px;                /* Sudut pembungkus gambar melengkung */
+    overflow: hidden;                   /* Mencegah gambar meluap dari sudut melengkung */
+    background-color: #f8f2ed;          /* Warna latar pembungkus gambar */
+    flex-shrink: 0;                     /* Mencegah gambar menyusut */
+}
+
+/* Gambar Produk di Dalam Item Keranjang */
+.gambar-item-keranjang img {
+    width: 100%;                        /* Lebar gambar memenuhi pembungkus */
+    height: 100%;                       /* Tinggi gambar memenuhi pembungkus */
+    object-fit: cover;                  /* Gambar dipotong rapi tanpa gepeng */
+}
+
+/* Wadah Detail Teks Item Barang */
+.detail-item-keranjang {
+    flex: 1;                            /* Mengisi sisa area kosong dalam item */
+}
+
+/* Teks Nama Barang di Keranjang */
+.nama-item-keranjang {
+    font-family: Georgia, serif;        /* Jenis font klasik nama barang */
+    font-size: 18px;                    /* Ukuran font nama barang */
+    font-weight: normal;                /* Berat huruf normal */
+    color: #302a27;                     /* Warna teks nama barang cokelat tua */
+    padding-right: 35px;                /* Jarak kanan agar tidak tertimpa tombol hapus */
+}
+
+/* Teks Harga Satuan Barang */
+.harga-item-keranjang {
+    margin-top: 6px;                   /* Jarak atas harga dari nama barang */
+    font-weight: bold;                  /* Mencetak tebal teks harga */
+    font-size: 15px;                    /* Ukuran font harga barang */
+    color: #b98378;                     /* Warna teks harga dusty pink */
+}
+
+/* Kotak Pengatur Jumlah Barang (Kuantitas) */
+.kotak-jumlah {
+    margin-top: 12px;                  /* Jarak atas pengatur jumlah dari harga */
+    display: inline-flex;               /* Flexbox segaris mengikuti lebar isi */
+    align-items: center;                /* Penyejajaran tombol dan angka di tengah */
+    gap: 12px;                          /* Jarak antar tombol dan angka jumlah */
+    background-color: #f8f2ed;          /* Warna latar kotak pengatur jumlah */
+    padding: 4px 12px;                  /* Jarak dalam kotak pengatur jumlah */
+    border-radius: 20px;                /* Sudut kotak pengatur jumlah membulat */
+    border: 1px solid #ded2cb;          /* Garis tepi tipis kotak pengatur jumlah */
+}
+
+/* Tombol Tambah/Kurang Jumlah Barang */
+.kotak-jumlah button {
+    width: 24px;                        /* Lebar tombol tambah/kurang */
+    height: 24px;                       /* Tinggi tombol tambah/kurang */
+    border: none;                       /* Menghapus garis tepi tombol */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran */
+    background-color: #fffdfb;          /* Warna latar tombol putih krem */
+    color: #302a27;                     /* Warna simbol plus/minus cokelat tua */
+    cursor: pointer;                    /* Kursor bentuk tangan saat ditunjuk */
+    font-weight: bold;                  /* Mencetak tebal simbol plus/minus */
+    font-size: 13px;                    /* Ukuran font simbol */
+    display: flex;                      /* Flexbox untuk menata simbol di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Bayangan lembut di bawah tombol */
+}
+
+/* Efek Hover Tombol Tambah/Kurang */
+.kotak-jumlah button:hover {
+    background-color: #302a27;          /* Latar tombol berubah cokelat tua saat di-hover */
+    color: #ffffff;                     /* Simbol berubah putih saat di-hover */
+}
+
+/* Tombol Hapus Barang dari Keranjang */
+.tombol-hapus {
+    position: absolute;                 /* Posisi melayang bebas di pojok kanan atas */
+    top: 16px;                          /* Jarak dari atas item */
+    right: 16px;                        /* Jarak dari kanan item */
+    background: #f8f2ed;                /* Warna latar tombol hapus */
+    border: none;                       /* Menghapus garis tepi tombol */
+    color: #8d817a;                     /* Warna ikon tombol hapus */
+    cursor: pointer;                    /* Kursor bentuk tangan saat ditunjuk */
+    padding: 8px;                       /* Jarak dalam tombol hapus */
+    display: flex;                      /* Menata ikon hapus di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran */
+    transition: all 0.2s ease;          /* Transisi pergerakan halus */
+}
+
+/* Efek Hover Tombol Hapus */
+.tombol-hapus:hover {
+    color: #e56b6b;                     /* Ikon berubah merah saat di-hover */
+    background-color: #fceee9;          /* Latar berubah kemerahan lembut saat di-hover */
+}
+
+/* ==========================================
+   FORMULIR ALAMAT & TOMBOL EDIT
+   ========================================== */
+/* Kotak Formulir Alamat Pengiriman */
+.kotak-alamat {
+    background-color: #fffdfb;          /* Warna latar belakang kotak alamat */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak alamat */
+    border-radius: 20px;                /* Sudut kotak alamat dibuat melengkung */
+    padding: 25px;                      /* Jarak dalam kotak alamat */
+    box-shadow: 0 6px 20px rgba(48, 42, 39, 0.03); /* Bayangan lembut di bawah kotak alamat */
+}
+
+/* Header Bagian Atas Kotak Alamat */
+.judul-kotak-alamat {
+    display: flex;                      /* Flexbox untuk menata judul dan tombol edit sejajar */
+    align-items: center;                /* Menyejajarkan posisi di tengah vertikal */
+    justify-content: space-between;     /* Jarak merata antara judul dan tombol edit */
+    margin-bottom: 18px;                /* Jarak bawah header ke isi form */
+}
+
+/* Wadah Judul Alamat Sisi Kiri */
+.pala-alamat-kiri {
+    display: flex;                      /* Menata ikon dan teks judul sejajar */
+    align-items: center;                /* Menyejajarkan di tengah vertikal */
+    gap: 8px;                           /* Jarak antara ikon dan teks judul */
+    color: #b98378;                     /* Warna teks dan ikon dusty pink */
+}
+
+/* Teks Judul Seksi Alamat */
+.pala-alamat-kiri h3 {
+    font-size: 11px;                    /* Ukuran font judul alamat */
+    letter-spacing: 2px;                /* Jarak antar huruf judul alamat */
+    font-weight: bold;                  /* Mencetak tebal teks judul */
+}
+
+/* Tombol Edit Alamat Pengiriman */
+.tombol-edit-alamat {
+    background-color: #f8f2ed;          /* Warna latar tombol edit alamat */
+    border: 1px solid #ded2cb;          /* Garis tepi tipis tombol edit */
+    border-radius: 12px;                /* Sudut tombol edit melengkung */
+    padding: 5px 12px;                  /* Jarak dalam tombol edit alamat */
+    font-size: 11px;                    /* Ukuran font teks tombol edit */
+    color: #806d63;                     /* Warna teks tombol edit */
+    font-weight: bold;                  /* Mencetak tebal teks tombol */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    transition: all 0.2s ease;          /* Transisi pergerakan halus */
+}
+
+/* Efek Hover Tombol Edit Alamat */
+.tombol-edit-alamat:hover {
+    background-color: #302a27;          /* Warna latar berubah cokelat tua saat di-hover */
+    color: #ffffff;                     /* Teks berubah putih saat di-hover */
+    border-color: #302a27;              /* Garis tepi berubah cokelat tua saat di-hover */
+}
+
+/* Label Petunjuk Input Form Alamat & Pembayaran */
+.kotak-alamat label,
+.kelompok-pembayaran label {
+    display: block;                     /* Mengubah label jadi elemen blok */
+    font-size: 10px;                    /* Ukuran font label input */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada label */
+    color: #9a8d85;                     /* Warna teks label input */
+    font-weight: bold;                  /* Mencetak tebal teks label */
+    margin-bottom: 6px;                 /* Jarak bawah label ke kolom input */
+    margin-top: 10px;                  /* Jarak atas label dari elemen sebelumnya */
+}
+
+/* Elemen Input Teks, Select, & Textarea Form Alamat */
+.kotak-alamat input,
+.kotak-alamat select,
+.kotak-alamat textarea,
+.kelompok-pembayaran select {
+    width: 100%;                        /* Lebar elemen memenuhi kotak form */
+    padding: 12px 14px;                 /* Jarak dalam elemen form */
+    border: 1px solid #ded2cb;          /* Garis tepi tipis elemen form */
+    border-radius: 10px;                /* Sudut elemen form melengkung */
+    outline: none;                      /* Menghapus outline bawaan browser saat diklik */
+    background-color: #f8f2ed;          /* Warna latar belakang elemen form */
+    font-size: 13px;                    /* Ukuran font ketikan/isian form */
+    color: #302a27;                     /* Warna teks isian form cokelat tua */
+    font-family: inherit;               /* Font mengikuti turunan body */
+    transition: all 0.25s ease;         /* Transisi perubahan halus */
+}
+
+/* Style saat input dalam kondisi terkunci / read-only */
+.kotak-alamat input[readonly],
+.kotak-alamat textarea[readonly] {
+    background-color: #f3ece6;          /* Latar belakang diubah sedikit lebih gelap saat terkunci */
+    color: #625650;                     /* Warna teks dibuat lebih lembut saat terkunci */
+    cursor: not-allowed;                /* Kursor berubah bentuk dilarang saat diarahkan */
+    border-color: #e4d8d0;              /* Warna garis tepi input terkunci */
+}
+
+/* Style saat Elemen Form Diklik / Difokuskan */
+.kotak-alamat input:focus,
+.kotak-alamat select:focus,
+.kotak-alamat textarea:focus,
+.kelompok-pembayaran select:focus {
+    border-color: #302a27;              /* Garis tepi berubah cokelat tua saat diklik */
+    background-color: #fffdfb;          /* Latar belakang berubah putih krem saat diklik */
+}
+
+/* Pengaturan Kotak Textarea Alamat */
+.kotak-alamat textarea {
+    min-height: 80px;                   /* Tinggi minimal kotak textarea */
+    resize: vertical;                   /* Pengguna hanya bisa mengubah ukuran secara vertikal */
+}
+
+/* Grid Baris Form 2 Kolom Sejajar */
+.baris-formulir {
+    display: grid;                      /* Menggunakan sistem grid */
+    grid-template-columns: 1fr 1fr;      /* Membagi form menjadi 2 kolom sama lebar */
+    gap: 15px;                          /* Jarak antar kolom form */
+}
+
+/* ==========================================
+   RINGKASAN PEMBAYARAN
+   ========================================== */
+/* Kotak Ringkasan Total Pembayaran */
+.kotak-ringkasan {
+    padding: 25px;                      /* Jarak dalam kotak ringkasan */
+    background-color: #fffdfb;          /* Warna latar belakang kotak ringkasan */
+    border-radius: 20px;                /* Sudut kotak ringkasan melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak ringkasan */
+    box-shadow: 0 10px 30px rgba(48, 42, 39, 0.05); /* Bayangan di bawah kotak ringkasan */
+    position: sticky;                   /* Kotak tetap menempel saat halaman di-scroll */
+    top: 95px;                          /* Batas posisi penempelan dari atas layar */
+}
+
+/* Judul Utama Kotak Ringkasan */
+.kotak-ringkasan h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul ringkasan */
+    font-size: 24px;                    /* Ukuran font judul ringkasan */
+    font-weight: normal;                /* Berat huruf normal */
+    color: #302a27;                     /* Warna teks judul ringkasan */
+    margin-bottom: 15px;                /* Jarak bawah judul ke baris rincian */
+}
+
+/* Baris Rincian Biaya Ringkasan */
+.baris-ringkasan {
+    margin-top: 10px;                  /* Jarak atas tiap baris rincian */
+    display: flex;                      /* Flexbox untuk menata nama & biaya sejajar */
+    justify-content: space-between;     /* Memberi jarak merata kiri-kanan */
+    align-items: center;                /* Penyejajaran vertikal di tengah */
+    color: #756861;                     /* Warna teks baris rincian */
+    font-size: 13px;                    /* Ukuran font teks rincian */
+}
+
+/* Baris Total Biaya Akhir */
+.baris-ringkasan.baris-total {
+    margin-top: 15px;                  /* Jarak atas baris total akhir */
+    padding-top: 12px;                  /* Jarak dalam atas baris total akhir */
+    border-top: 1px dashed #ded2cb;     /* Garis putus-putus pembatas total akhir */
+}
+
+/* Teks Nominal Angka Total Pembayaran */
+.baris-ringkasan strong {
+    font-size: 20px;                    /* Ukuran font nominal angka total */
+    color: #b98378;                     /* Warna nominal total dusty pink */
+}
+
+/* Garis Pemisah Horizontal Ringkasan */
+.kotak-ringkasan hr {
+    margin: 20px 0;                     /* Jarak atas-bawah garis pemisah */
+    border: none;                       /* Menghapus border bawaan */
+    border-top: 1px solid #eee3dc;      /* Garis pemisah tipis horizontal */
+}
+
+/* Tombol Proses Checkout Pembayaran */
+.tombol-checkout {
+    width: 100%;                        /* Lebar tombol memenuhi kotak ringkasan */
+    margin-top: 20px;                  /* Jarak atas tombol dari total belanja */
+    padding: 16px;                      /* Jarak dalam tombol checkout */
+    border: none;                       /* Menghapus garis tepi tombol */
+    border-radius: 30px;                /* Sudut tombol dibuat membulat penuh */
+    background-color: #302a27;          /* Warna latar tombol checkout cokelat tua */
+    color: #ffffff;                     /* Warna teks tombol checkout putih */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    font-size: 11px;                    /* Ukuran font teks tombol checkout */
+    letter-spacing: 2px;                /* Jarak antar huruf pada tombol */
+    font-weight: bold;                  /* Mencetak tebal teks tombol checkout */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus */
+    box-shadow: 0 6px 18px rgba(48, 42, 39, 0.15); /* Bayangan lembut di bawah tombol */
+}
+
+/* Efek Hover Tombol Checkout */
+.tombol-checkout:hover {
+    background-color: #806d63;          /* Warna latar berubah cokelat lembut saat di-hover */
+    transform: translateY(-2px);        /* Tombol terangkat 2px ke atas saat di-hover */
+}
+
+/* ==========================================
+   MODAL POP-UP (QRIS & PROFIL)
+   ========================================== */
+/* Latar Transparan Overlay Pop-up QRIS */
+.modal-qris {
+    position: fixed;                    /* Menempel permanen di layar monitor */
+    top: 0;                             /* Posisi dari atas layar */
+    left: 0;                            /* Posisi dari kiri layar */
+    width: 100vw;                       /* Memenuhi lebar penuh layar */
+    height: 100vh;                      /* Memenuhi tinggi penuh layar */
+    z-index: 600;                       /* Menempatkan modal di atas elemen lain */
+    display: none;                      /* Disembunyikan secara bawaan */
+    align-items: center;                /* Menyejajarkan posisi modal di tengah vertikal */
+    justify-content: center;            /* Menyejajarkan posisi modal di tengah horizontal */
+    padding: 15px;                      /* Jarak dalam overlay */
+    background-color: rgba(48, 42, 39, 0.65); /* Latar belakang cokelat gelap transparan 65% */
+    backdrop-filter: blur(8px);         /* Pemburaman latar di belakang modal */
+}
+
+/* Menampilkan Modal QRIS saat Kelas .tampil Ditambahkan */
+.modal-qris.tampil {
+    display: flex;                      /* Menampilkan modal dengan flexbox saat aktif */
+}
+
+/* Kotak Utama Modal QRIS */
+.kotak-qris {
+    width: 100%;                        /* Lebar memenuhi batas maksimal */
+    max-width: 340px;                   /* Lebar batas maksimal modal QRIS */
+    background-color: #fffdfb;          /* Warna latar belakang kotak QRIS krem muda */
+    border-radius: 20px;                /* Sudut kotak QRIS dibuat melengkung */
+    padding: 22px 20px 20px;            /* Jarak dalam kotak QRIS */
+    position: relative;                 /* Patokan posisi tombol silang tutup */
+    text-align: center;                 /* Rataan teks diatur di tengah */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); /* Bayangan pekat di sekeliling modal QRIS */
+}
+
+/* Tombol Silang Penutup Modal QRIS */
+.tutup-qris {
+    position: absolute;                 /* Posisi melayang bebas di pojok kanan atas */
+    top: 12px;                          /* Jarak dari atas */
+    right: 14px;                        /* Jarak dari kanan */
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: #f8f2ed;                /* Warna latar belakang tombol tutup */
+    width: 28px;                        /* Lebar tombol tutup */
+    height: 28px;                       /* Tinggi tombol tutup */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran */
+    font-size: 16px;                    /* Ukuran font silang */
+    color: #806d63;                     /* Warna ikon silang */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    display: flex;                      /* Menata ikon silang di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+}
+
+/* Efek Hover Tombol Tutup QRIS */
+.tutup-qris:hover {
+    background-color: #b98378;          /* Warna latar berubah dusty pink saat di-hover */
+    color: #ffffff;                     /* Warna ikon silang berubah putih saat di-hover */
+}
+
+/* Judul Utama Modal QRIS */
+.kotak-qris h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul QRIS */
+    font-size: 20px;                    /* Ukuran font judul QRIS */
+    font-weight: normal;                /* Berat huruf normal */
+    color: #302a27;                     /* Warna teks judul QRIS */
+}
+
+/* Subjudul Petunjuk Modal QRIS */
+.subjudul-qris {
+    font-size: 11px;                    /* Ukuran font petunjuk QRIS */
+    color: #8d817a;                     /* Warna teks petunjuk QRIS */
+    margin-top: 4px;                    /* Jarak atas dari judul */
+    margin-bottom: 15px;                /* Jarak bawah ke kartu QRIS */
+    line-height: 1.4;                   /* Rapat baris petunjuk */
+}
+
+/* Kartu Pembungkus Gambar QRIS & Detail Nominal */
+.kartu-qris {
+    background-color: #f8f2ed;          /* Warna latar kartu QRIS */
+    border: 1px solid #ded2cb;          /* Garis tepi tipis kartu QRIS */
+    border-radius: 14px;                /* Sudut kartu QRIS melengkung */
+    padding: 14px;                      /* Jarak dalam kartu QRIS */
+    margin-bottom: 15px;                /* Jarak bawah kartu ke tombol konfirmasi */
+}
+
+/* Teks Logo Pembayaran QRIS */
+.logo-pembayaran-qris {
+    font-size: 10px;                    /* Ukuran font logo pembayaran */
+    letter-spacing: 2px;                /* Jarak antar huruf logo pembayaran */
+    font-weight: bold;                  /* Mencetak tebal teks logo */
+    color: #b98378;                     /* Warna teks logo dusty pink */
+    margin-bottom: 10px;                /* Jarak bawah logo ke gambar barcode */
+}
+
+/* Pembungkus Barcode Gambar QRIS */
+.pembungkus-gambar-qris {
+    width: 140px;                       /* Lebar pembungkus barcode */
+    height: 140px;                      /* Tinggi pembungkus barcode */
+    margin: 0 auto 10px auto;           /* Posisi pembungkus tepat di tengah horizontal */
+    background-color: #ffffff;          /* Warna latar pembungkus putih agar mudah di-scan */
+    padding: 8px;                       /* Jarak dalam pembungkus barcode */
+    border-radius: 10px;                /* Sudut pembungkus barcode melengkung */
+    border: 1px solid #ded2cb;          /* Garis tepi tipis pembungkus barcode */
+    display: flex;                      /* Menata gambar di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+}
+
+/* Label Petunjuk Nominal Transfer */
+.label-nominal-qris {
+    font-size: 9px;                     /* Ukuran font label nominal */
+    letter-spacing: 1px;                /* Jarak antar huruf label nominal */
+    color: #9a8d85;                     /* Warna teks label nominal */
+    font-weight: bold;                  /* Mencetak tebal teks label nominal */
+}
+
+/* Teks Nominal Total Bayar di Modal QRIS */
+.kartu-qris h3 {
+    font-size: 18px;                    /* Ukuran font teks nominal bayar */
+    color: #302a27;                     /* Warna teks nominal bayar cokelat tua */
+    font-weight: bold;                  /* Mencetak tebal teks nominal bayar */
+    margin-top: 2px;                    /* Jarak atas dari label nominal */
+}
+
+/* Teks Catatan Tambahan Modal QRIS */
+.kartu-qris small {
+    display: block;                     /* Mengubah catatan jadi elemen blok */
+    font-size: 9px;                     /* Ukuran font catatan tambahan */
+    color: #8d817a;                     /* Warna teks catatan tambahan */
+    margin-top: 4px;                    /* Jarak atas dari nominal bayar */
+    letter-spacing: 1px;                /* Jarak antar huruf catatan tambahan */
+}
+
+/* Detail Profil Pengguna di Dalam Modal */
+.item-detail-profil {
+    margin-bottom: 12px;                /* Jarak bawah antar item detail profil */
+}
+
+/* Item Detail Profil Terakhir */
+.item-detail-profil:last-child {
+    margin-bottom: 0;                   /* Menghapus jarak bawah untuk item terakhir */
+}
+
+/* Label Kecil Detail Profil */
+.item-detail-profil small {
+    font-size: 9px;                     /* Ukuran font label detail profil */
+    letter-spacing: 1.5px;              /* Jarak antar huruf label detail profil */
+    color: #b98378;                     /* Warna teks label dusty pink */
+    font-weight: bold;                  /* Mencetak tebal label detail profil */
+}
+
+/* Teks Isian Detail Profil */
+.item-detail-profil p {
+    font-size: 13px;                    /* Ukuran font isian detail profil */
+    color: #302a27;                     /* Warna teks isian detail profil cokelat tua */
+    font-weight: bold;                  /* Mencetak tebal isian detail profil */
+    margin-top: 2px;                    /* Jarak atas dari label */
+}
+
+/* Tombol Konfirmasi Pembayaran di Modal QRIS */
+.kotak-qris .tombol-checkout {
+    margin-top: 5px;                   /* Jarak atas tombol dari kartu QRIS */
+    padding: 12px;                      /* Jarak dalam tombol konfirmasi */
+    font-size: 10px;                    /* Ukuran font teks tombol konfirmasi */
+}

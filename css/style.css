@@ -1,0 +1,903 @@
+/* Reset CSS untuk menyamakan tampilan di semua browser */
+* {
+    margin: 0;                          /* Menghapus jarak luar bawaan browser */
+    padding: 0;                         /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box;             /* Memastikan ukuran elemen dihitung termasuk padding & border */
+}
+
+/* Mengaktifkan guliran halaman yang halus saat navigasi link internal */
+html {
+    scroll-behavior: smooth;            /* Efek guliran halus saat mengklik tautan jangkar */
+}
+
+/* Gaya dasar untuk elemen body halaman utama */
+body {
+    font-family: Arial, sans-serif;     /* Jenis font utama halaman */
+    background-color: #f8f2ed;          /* Warna latar belakang utama krem lembut */
+    color: #302a27;                     /* Warna teks utama cokelat tua */
+}
+
+/* Navbar Navigasi Utama */
+.navbar {
+    position: sticky;                   /* Memuat navbar menempel saat di-scroll */
+    top: 0;                             /* Mematok posisi navbar paling atas */
+    z-index: 100;                       /* Posisi penumpukan navbar di atas elemen biasa */
+    min-height: 80px;                   /* Tinggi minimal navbar */
+    padding: 15px 6%;                   /* Jarak dalam navbar (atas-bawah 15px, kiri-kanan 6%) */
+    background-color: rgba(255, 253, 251, 0.95); /* Latar transparan navbar krem muda 95% */
+    backdrop-filter: blur(12px);        /* Efek pemburaman latar di belakang navbar */
+    border-bottom: 1px solid #f0e4dd;   /* Garis pembatas bawah navbar */
+    display: flex;                      /* Flexbox untuk menata elemen navbar sejajar */
+    align-items: center;                /* Posisi elemen navbar di tengah vertikal */
+    justify-content: space-between;     /* Jarak merata antar elemen logo, menu, dan aksi */
+    gap: 20px;                          /* Jarak antar kelompok elemen di navbar */
+}
+
+/* Logo LÉSCIA di Navbar */
+.nav-logo {
+    color: #2b2320;                     /* Warna teks logo cokelat tua */
+    text-decoration: none;              /* Menghapus garis bawah tautan logo */
+    font-size: 24px;                    /* Ukuran font teks logo */
+    font-weight: bold;                  /* Mencetak tebal teks logo */
+    letter-spacing: 5px;                /* Jarak antar huruf pada logo */
+}
+
+/* Menu Navigasi Tengah */
+.nav-menu {
+    display: flex;                      /* Menyusun menu secara sejajar horizontal */
+    gap: 15px;                          /* Jarak antar tombol menu */
+}
+
+/* Tautan Menu Navigasi */
+.nav-link {
+    color: #6b5c56;                     /* Warna teks menu sebelum di-hover */
+    text-decoration: none;              /* Menghapus garis bawah tautan menu */
+    font-size: 11px;                    /* Ukuran font teks menu */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada menu */
+    font-weight: bold;                  /* Mencetak tebal teks menu */
+    padding: 8px 16px;                  /* Jarak dalam tombol menu */
+    border-radius: 20px;                /* Membuat sudut tombol menu melengkung membulat */
+    display: flex;                      /* Menata ikon dan teks menu sejajar */
+    align-items: center;                /* Menyejajarkan ikon dan teks di tengah vertikal */
+    gap: 6px;                           /* Jarak antara ikon dengan teks menu */
+    transition: 0.3s;                   /* Transisi animasi saat status berubah */
+    background-color: transparent;      /* Latar belakang tombol menu transparan secara bawaan */
+}
+
+/* Efek Hover Tautan Menu Navigasi */
+.nav-link:hover {
+    color: #2b2320;                     /* Warna teks berubah lebih gelap saat ditunjuk */
+}
+
+/* Gaya khusus pill kategori navigasi aktif */
+.nav-link.category-pill,
+.nav-link.active.category-pill {
+    background-color: #2b2320;          /* Warna latar belakang pill berubah cokelat tua pekat */
+    color: #ffffff !important;          /* Warna teks dipaksa menjadi putih terang */
+}
+
+/* Efek Hover pill kategori navigasi */
+.nav-link.category-pill:hover {
+    background-color: #806d63;          /* Latar berubah cokelat lembut saat di-hover */
+    color: #ffffff !important;          /* Warna teks dipaksa tetap putih saat di-hover */
+}
+
+/* Wadah Tombol Aksi Kanan Navbar */
+.nav-actions {
+    display: flex;                      /* Menyusun tombol aksi secara horizontal */
+    gap: 12px;                          /* Jarak antar tombol aksi */
+}
+
+/* Tombol Ikon Navbar (Dark Mode, Cart, Profile) */
+.nav-icon {
+    position: relative;                 /* Posisi relatif sebagai patokan lencana angka */
+    width: 40px;                        /* Lebar tombol ikon */
+    height: 40px;                       /* Tinggi tombol ikon */
+    border: 1px solid #e2d9cd;          /* Garis pinggir tipis tombol ikon */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran sempurna */
+    background-color: #fffdfb;          /* Warna latar belakang tombol ikon krem muda */
+    color: #302a27;                     /* Warna ikon di dalam tombol */
+    cursor: pointer;                    /* Kursor berubah bentuk tangan saat ditunjuk */
+    transition: 0.3s;                   /* Transisi pergerakan halus saat di-hover */
+    display: inline-flex;               /* Menata ikon di tengah tombol */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+}
+
+/* Efek Hover Tombol Ikon Navbar */
+.nav-icon:hover {
+    background-color: #806d63;          /* Warna latar berubah cokelat lembut saat di-hover */
+    color: white;                       /* Warna ikon berubah putih saat di-hover */
+    transform: translateY(-2px);        /* Tombol terangkat 2px ke atas saat di-hover */
+}
+
+/* Lencana Angka Keranjang Belanja */
+.nav-icon small {
+    position: absolute;                 /* Posisi melayang relatif terhadap tombol ikon */
+    top: -3px;                          /* Geser sedikit ke atas */
+    right: -3px;                        /* Geser sedikit ke kanan */
+    width: 18px;                        /* Lebar lingkaran lencana angka */
+    height: 18px;                       /* Tinggi lingkaran lencana angka */
+    border-radius: 50%;                 /* Membuat lencana berbentuk lingkaran */
+    background-color: #e59892;          /* Warna latar belakang lencana dusty pink */
+    color: white;                       /* Warna teks angka putih */
+    font-size: 9px;                     /* Ukuran font angka lencana */
+    font-weight: bold;                  /* Mencetak tebal angka lencana */
+    display: flex;                      /* Posisi angka tepat di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+}
+
+/* Seksi Hero Beranda */
+.hero {
+    min-height: 650px;                  /* Tinggi minimal seksi hero */
+    padding: 80px 8%;                   /* Jarak dalam seksi hero (atas-bawah 80px, kiri-kanan 8%) */
+    position: relative;                 /* Patokan posisi elemen melayang di dalamnya */
+    overflow: hidden;                   /* Menjaga elemen dekorasi tidak keluar seksi */
+    display: flex;                      /* Flexbox untuk menata konten dan visual sejajar */
+    align-items: center;                /* Menyejajarkan posisi di tengah vertikal */
+    justify-content: space-between;     /* Memberi jarak merata antara teks dan visual */
+    gap: 50px;                          /* Jarak antara konten teks dan visual hero */
+}
+
+/* Wadah Konten Teks Hero */
+.hero-content {
+    max-width: 620px;                   /* Lebar maksimal wadah teks hero */
+    position: relative;                 /* Patokan tingkat penumpukan */
+    z-index: 2;                         /* Berada di atas elemen dekorasi visual */
+}
+
+/* Teks Penanda Kecil di Atas Judul */
+.hero-small,
+.section-small {
+    font-size: 10px;                    /* Ukuran font teks penanda kecil */
+    letter-spacing: 3px;                /* Jarak antar huruf teks penanda */
+    color: #9a8d85;                     /* Warna teks penanda pudar */
+    margin-bottom: 14px;                /* Jarak bawah ke judul utama */
+}
+
+/* Judul Utama Seksi Hero */
+.hero-content h1 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul hero */
+    font-size: clamp(55px, 7vw, 90px);  /* Ukuran font responsif menyesuaikan lebar layar */
+    font-weight: normal;                /* Berat huruf judul normal */
+    line-height: 0.94;                  /* Rapat baris judul hero */
+}
+
+/* Cetak Miring pada Judul Hero */
+.hero-content h1 i {
+    color: #b98378;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Paragraf Deskripsi Teks Hero */
+.hero-description {
+    max-width: 400px;                   /* Lebar maksimal paragraf deskripsi */
+    margin-top: 25px;                   /* Jarak atas dari judul hero */
+    color: #8d817a;                     /* Warna teks deskripsi hero */
+    font-size: 14px;                    /* Ukuran font deskripsi hero */
+    line-height: 1.7;                   /* Jarak antar baris kalimat */
+}
+
+/* Pembungkus Tombol Aksi di Hero */
+.hero-buttons-wrapper {
+    display: flex;                      /* Menyusun tombol hero secara horizontal */
+    gap: 15px;                          /* Jarak antar tombol hero */
+    margin-top: 30px;                   /* Jarak atas dari deskripsi */
+}
+
+/* Tombol Utama Seksi Hero */
+.hero-button {
+    width: auto;                        /* Lebar menyesuaikan isi teks */
+    padding: 15px 22px;                 /* Jarak dalam tombol hero */
+    border-radius: 6px;                 /* Sudut tombol melengkung halus */
+    background-color: #302a27;          /* Warna latar tombol cokelat tua */
+    color: white;                       /* Warna teks tombol putih */
+    text-decoration: none;              /* Menghapus garis bawah tautan */
+    display: flex;                      /* Menata teks dan ikon sejajar */
+    align-items: center;                /* Posisi di tengah vertikal */
+    gap: 10px;                          /* Jarak antar teks dan ikon */
+    font-size: 10px;                    /* Ukuran font teks tombol */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada tombol */
+    transition: 0.3s;                   /* Transisi pergerakan halus saat di-hover */
+}
+
+/* Tombol Outline (Garis Tepi) di Hero */
+.hero-button.btn-outline {
+    background-color: transparent;      /* Latar belakang transparan */
+    color: #302a27;                     /* Warna teks cokelat tua */
+    border: 1px solid #302a27;          /* Garis tepi tipis warna cokelat tua */
+}
+
+/* Efek Hover Tombol Hero */
+.hero-button:hover {
+    background-color: #806d63;          /* Warna latar berubah cokelat lembut saat di-hover */
+    color: white;                       /* Teks dipaksa menjadi putih saat di-hover */
+    transform: translateY(-4px);        /* Tombol terangkat 4px ke atas saat di-hover */
+}
+
+/* Wadah Visual Gambar/Kartu Hero Sisi Kanan */
+.hero-visual {
+    width: 400px;                       /* Lebar wadah visual */
+    height: 400px;                      /* Tinggi wadah visual */
+    position: relative;                 /* Patokan posisi melayang lingkaran & kartu */
+    flex-shrink: 0;                     /* Mencegah wadah visual menyusut */
+}
+
+/* Lingkaran Dekorasi Latar Belakang Hero */
+.hero-circle {
+    position: absolute;                 /* Posisi melayang relatif di dalam wadah visual */
+    width: 330px;                       /* Lebar lingkaran dekorasi */
+    height: 330px;                      /* Tinggi lingkaran dekorasi */
+    border-radius: 50%;                 /* Membuat bentuk lingkaran sempurna */
+    background-color: #ead8d1;          /* Warna latar lingkaran krem merah muda */
+    right: 10px;                        /* Posisi dari kanan */
+    top: 30px;                          /* Posisi dari atas */
+}
+
+/* Kartu Estetis Melayang di Hero */
+.hero-card {
+    position: absolute;                 /* Posisi melayang relatif di atas lingkaran */
+    width: 230px;                       /* Lebar kartu hero */
+    height: 300px;                      /* Tinggi kartu hero */
+    right: 70px;                        /* Posisi dari kanan */
+    top: 60px;                          /* Posisi dari atas */
+    padding: 25px;                      /* Jarak dalam kartu hero */
+    border-radius: 14px;                /* Sudut kartu dibuat melengkung */
+    background-color: #806d63;          /* Warna latar belakang kartu cokelat lembut */
+    color: white;                       /* Warna teks di dalam kartu putih */
+    box-shadow: 0 25px 45px rgba(70, 50, 40, 0.18); /* Bayangan lembut melayang di bawah kartu */
+    transform: rotate(5deg);            /* Memutar posisi kartu 5 derajat secara estetik */
+    transition: 0.4s;                   /* Transisi pergerakan halus saat kartu di-hover */
+}
+
+/* Efek Hover Kartu Melayang Hero */
+.hero-card:hover {
+    transform: rotate(0deg) translateY(-8px); /* Posisi kartu kembali tegak dan terangkat 8px */
+}
+
+/* Teks Bagian Atas Kartu Hero */
+.hero-card-top {
+    font-size: 13px;                    /* Ukuran font teks atas kartu */
+    letter-spacing: 4px;                /* Jarak antar huruf */
+    font-weight: bold;                  /* Mencetak tebal teks atas kartu */
+}
+
+/* Wadah Simbol/Ikon Fashion di Dalam Kartu Hero */
+.hero-fashion {
+    position: absolute;                 /* Posisi melayang di tengah kartu */
+    top: 105px;                         /* Posisi dari atas kartu */
+    left: 0;                            /* Posisi dari kiri */
+    width: 100%;                        /* Memenuhi lebar kartu */
+    display: flex;                      /* Menata simbol sejajar */
+    justify-content: center;            /* Posisi simbol di tengah */
+    gap: 20px;                          /* Jarak antar ikon fashion */
+    font-size: 30px;                    /* Ukuran font ikon fashion */
+    color: #f1d9d0;                     /* Warna ikon krem terang */
+}
+
+/* Paragraf Teks di Bawah Kartu Hero */
+.hero-card p {
+    position: absolute;                 /* Posisi melayang di bagian bawah kartu */
+    bottom: 30px;                       /* Jarak dari bawah kartu */
+    left: 25px;                         /* Jarak dari kiri kartu */
+    font-family: Georgia, serif;        /* Jenis font klasik teks kartu */
+    font-size: 17px;                    /* Ukuran font teks bawah kartu */
+}
+
+/* Dekorasi Bintang Melayang di Hero */
+.hero-star {
+    position: absolute;                 /* Posisi melayang di seksi hero */
+    color: #c59b92;                     /* Warna ikon bintang dusty pink */
+}
+
+/* Posisi Bintang Pertama */
+.star-one {
+    top: 130px;                         /* Posisi bintang 1 dari atas */
+    right: 42%;                         /* Posisi bintang 1 dari kanan */
+}
+
+/* Posisi Bintang Kedua */
+.star-two {
+    bottom: 80px;                       /* Posisi bintang 2 dari bawah */
+    left: 45%;                          /* Posisi bintang 2 dari kiri */
+}
+
+/* Dekorasi Hati Melayang di Hero */
+.hero-heart {
+    position: absolute;                 /* Posisi melayang di seksi hero */
+    right: 8%;                          /* Posisi dari kanan seksi */
+    bottom: 70px;                       /* Posisi dari bawah seksi */
+    color: #c59b92;                     /* Warna dekorasi hati dusty pink */
+    font-size: 50px;                    /* Ukuran font ikon hati */
+    opacity: 0.5;                       /* Transparansi ikon hati 50% */
+}
+
+/* Seksi Pratinjau Kategori di Beranda */
+.category-preview {
+    padding: 100px 7%;                  /* Jarak dalam seksi pratinjau kategori */
+    background-color: #fffdfb;          /* Warna latar belakang krem muda */
+}
+
+/* Header Judul Seksi */
+.section-heading {
+    display: flex;                      /* Flexbox untuk menata judul dan tautan sejajar */
+    justify-content: space-between;     /* Jarak merata antara judul dan tautan 'Lihat Semua' */
+    align-items: flex-end;              /* Penyejajaran sejajar di bagian bawah */
+    margin-bottom: 45px;                /* Jarak bawah header ke grid kartu */
+}
+
+/* Judul Utama Seksi */
+.section-heading h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul seksi */
+    font-size: 48px;                    /* Ukuran font judul seksi */
+    font-weight: normal;                /* Berat huruf normal */
+}
+
+/* Cetak Miring pada Judul Seksi */
+.section-heading h2 i {
+    color: #b98378;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Tautan 'Lihat Semua' */
+.view-all {
+    color: #806d63;                     /* Warna teks tautan lihat semua */
+    text-decoration: none;              /* Menghapus garis bawah tautan */
+    font-size: 10px;                    /* Ukuran font tautan */
+    letter-spacing: 1.5px;              /* Jarak antar huruf tautan */
+}
+
+/* Grid Kartu Pratinjau Kategori */
+.category-preview-grid {
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: repeat(4, 1fr); /* Membagi menjadi 4 kolom kartu sama lebar */
+    gap: 18px;                          /* Jarak antar kartu pratinjau */
+}
+
+/* Kartu Pratinjau Kategori Individu */
+.preview-card {
+    min-height: 230px;                  /* Tinggi minimal kartu pratinjau */
+    padding: 25px;                      /* Jarak dalam kartu pratinjau */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kartu pratinjau */
+    border-radius: 16px;                /* Sudut kartu dibuat melengkung */
+    background-color: #f8f2ed;          /* Warna latar belakang kartu krem lembut */
+    color: #302a27;                     /* Warna teks utama kartu cokelat tua */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    text-align: left;                   /* Rataan teks kiri */
+    position: relative;                 /* Patokan posisi elemen di dalam kartu */
+    display: flex;                      /* Flexbox untuk menata teks dan panah secara vertikal */
+    flex-direction: column;             /* Arah susunan elemen ke bawah */
+    justify-content: space-between;     /* Jarak merata atas-bawah */
+    transition: 0.35s;                  /* Transisi pergerakan halus saat di-hover */
+}
+
+/* Efek Hover Kartu Pratinjau Kategori */
+.preview-card:hover {
+    transform: translateY(-8px);        /* Kartu terangkat 8px ke atas saat di-hover */
+    border-color: #c9a098;              /* Garis tepi berubah warna dusty pink */
+    box-shadow: 0 18px 35px rgba(80, 60, 50, 0.12); /* Bayangan lembut di bawah kartu */
+}
+
+/* Teks Penanda Atas Kartu Pratinjau */
+.preview-card > span {
+    font-size: 10px;                    /* Ukuran font teks penanda atas */
+    letter-spacing: 2px;                /* Jarak antar huruf penanda */
+    color: #a89991;                     /* Warna teks penanda pudar */
+}
+
+/* Pembungkus Teks Judul dan Subjudul Kartu */
+.preview-card div {
+    position: relative;                 /* Posisi relatif di dalam kartu */
+    z-index: 2;                         /* Berada di atas latar belakang */
+}
+
+/* Paragraf Deskripsi Kecil Kartu */
+.preview-card p {
+    font-size: 9px;                     /* Ukuran font deskripsi kartu */
+    letter-spacing: 2px;                /* Jarak antar huruf deskripsi */
+    color: #9a8d85;                     /* Warna teks deskripsi pudar */
+    margin-bottom: 8px;                 /* Jarak bawah ke judul kartu */
+}
+
+/* Judul Utama Kartu Pratinjau */
+.preview-card h3 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul kartu */
+    font-size: 28px;                    /* Ukuran font judul kartu */
+    font-weight: normal;                /* Berat huruf normal */
+}
+
+/* Simbol Panah di Pojok Kartu */
+.preview-card b {
+    align-self: flex-end;               /* Posisi panah diatur paling kanan bawah */
+    font-size: 22px;                    /* Ukuran font simbol panah */
+    font-weight: normal;                /* Berat huruf normal */
+}
+
+/* Seksi Pratinjau Produk Terfavorit (Top Rated) */
+.top-preview {
+    min-height: 480px;                  /* Tinggi minimal seksi top preview */
+    padding: 100px 7%;                  /* Jarak dalam seksi top preview */
+    background-color: #f4ebe5;          /* Warna latar belakang cokelat krem hangat */
+    text-align: center;                 /* Rataan teks diatur di tengah */
+    display: flex;                      /* Flexbox untuk menyusun judul & tombol vertikal */
+    flex-direction: column;             /* Arah susunan elemen ke bawah */
+    align-items: center;                /* Posisi elemen di tengah horizontal */
+    justify-content: center;            /* Posisi elemen di tengah vertikal */
+}
+
+/* Judul Utama Seksi Top Preview */
+.top-preview h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul top preview */
+    font-size: 55px;                    /* Ukuran font judul top preview */
+    font-weight: normal;                /* Berat huruf normal */
+}
+
+/* Cetak Miring pada Judul Top Preview */
+.top-preview h2 i {
+    color: #b98378;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Paragraf Deskripsi Seksi Top Preview */
+.top-preview > p:not(.section-small) {
+    margin-top: 12px;                  /* Jarak atas paragraf dari judul */
+    color: #8d817a;                     /* Warna teks deskripsi */
+}
+
+/* Tombol Aksi Seksi Top Preview */
+.top-button {
+    margin-top: 30px;                  /* Jarak atas tombol dari deskripsi */
+    padding: 14px 20px;                 /* Jarak dalam tombol */
+    border: 1px solid #c9b3aa;          /* Garis tepi tipis tombol */
+    border-radius: 5px;                 /* Sudut tombol melengkung halus */
+    color: #665b54;                     /* Warna teks tombol */
+    text-decoration: none;              /* Menghapus garis bawah tautan */
+    font-size: 10px;                    /* Ukuran font tombol */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada tombol */
+}
+
+/* Seksi Pratinjau About di Beranda */
+.about-preview {
+    min-height: 500px;                  /* Tinggi minimal seksi pratinjau about */
+    padding: 100px 8%;                  /* Jarak dalam seksi pratinjau about */
+    background-color: #fffdfb;          /* Warna latar belakang krem muda */
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: 1fr 1fr;      /* Membagi menjadi 2 kolom (dekorasi & konten) */
+    align-items: center;                /* Posisi elemen di tengah vertikal */
+    gap: 80px;                          /* Jarak antara dekorasi dan konten teks */
+}
+
+/* Teks Dekorasi Raksasa Seksi About */
+.about-decoration {
+    font-family: Georgia, serif;        /* Jenis font klasik teks dekorasi */
+    font-size: clamp(60px, 10vw, 130px); /* Ukuran font raksasa responsif menyesuaikan layar */
+    color: #ead8d1;                     /* Warna teks dekorasi krem merah muda lembut */
+}
+
+/* Wadah Konten Teks Seksi About */
+.about-content {
+    max-width: 550px;                   /* Lebar maksimal wadah teks about */
+}
+
+/* Judul Seksi About di Beranda */
+.about-content h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul about */
+    font-size: 50px;                    /* Ukuran font judul about */
+    font-weight: normal;                /* Berat huruf normal */
+}
+
+/* Cetak Miring pada Judul About */
+.about-content h2 i {
+    color: #b98378;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Paragraf Deskripsi Seksi About */
+.about-content > p:not(.section-small) {
+    margin-top: 20px;                  /* Jarak atas paragraf dari judul */
+    color: #8d817a;                     /* Warna teks deskripsi */
+    line-height: 1.8;                   /* Jarak antar baris kalimat */
+}
+
+/* Tombol Selengkapnya Seksi About */
+.about-button {
+    display: inline-block;              /* Format elemen blok segaris */
+    margin-top: 25px;                  /* Jarak atas tombol dari paragraf */
+    color: #806d63;                     /* Warna teks tombol about */
+    text-decoration: none;              /* Menghapus garis bawah tautan */
+    font-size: 10px;                    /* Ukuran font tombol */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada tombol */
+}
+
+/* =========================================================
+   MODAL PROFILE ELEGAN & TEPAT PRESISI (ENHANCED)
+   ========================================================= */
+
+/* Animasi Muncul Halus Modal Profil */
+/* @keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(30px) scale(0.98); } 
+    100% { opacity: 1; transform: translateY(0) scale(1); } 
+} */
+
+/* Overlay Transparan Modal Profil Melayang */
+.profile-popup {
+    position: fixed;                    /* Menempel permanen di layar monitor */
+    inset: 0;                           /* Memenuhi posisi top, right, bottom, left 0 */
+    z-index: 500;                       /* Berada di atas elemen biasa halaman */
+    display: none;                      /* Disembunyikan secara bawaan */
+    align-items: center;                /* Posisi modal di tengah vertikal */
+    justify-content: center;            /* Posisi modal di tengah horizontal */
+    padding: 20px;                      /* Jarak dalam overlay */
+    background-color: rgba(48, 42, 39, 0.6); /* Latar belakang cokelat gelap transparan 60% */
+    backdrop-filter: blur(8px);         /* Pemburaman latar di belakang modal profil */
+}
+
+/* Menampilkan Modal Profil saat Kelas .show Ditambahkan */
+.profile-popup.show {
+    display: flex;                      /* Menampilkan modal dengan flexbox saat aktif */
+}
+
+/* Efek Jalannya Animasi ketika Kelas .show Aktif */
+.profile-popup.show .profile-box {
+    animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Menjalankan animasi terangkat saat modal muncul */
+}
+
+/* Kotak Utama Pembungkus Modal Profil */
+.profile-box {
+    width: 100%;                        /* Memenuhi lebar maksimal */
+    max-width: 800px;                   /* Lebar batas maksimal modal profil */
+    padding: 45px;                      /* Jarak dalam modal profil */
+    border-radius: 24px;                /* Sudut kotak modal melengkung membulat */
+    background-color: #fffdfb;          /* Warna latar belakang modal krem muda */
+    position: relative;                 /* Patokan posisi tombol silang penutup */
+    box-shadow: 0 30px 80px rgba(40, 30, 25, 0.25); /* Bayangan pekat di sekeliling modal profil */
+    border: 1px solid #f0e4dd;          /* Garis tepi tipis warna cokelat muda */
+}
+
+/* Tombol Silang Penutup Modal Profil */
+.popup-close {
+    position: absolute;                 /* Posisi melayang bebas di pojok kanan atas modal */
+    top: 25px;                          /* Jarak dari atas modal */
+    right: 25px;                        /* Jarak dari kanan modal */
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: #f8f2ed;                /* Warna latar belakang tombol silang */
+    width: 40px;                        /* Lebar tombol silang */
+    height: 40px;                       /* Tinggi tombol silang */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran sempurna */
+    font-size: 26px;                    /* Ukuran font ikon silang */
+    color: #806d63;                     /* Warna simbol silang */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    line-height: 1;                     /* Rapat baris simbol silang */
+    display: flex;                      /* Flexbox untuk menata ikon di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus saat di-hover */
+}
+
+/* Efek Hover Tombol Silang Penutup */
+.popup-close:hover {
+    background: #b98378;                /* Latar tombol berubah dusty pink saat di-hover */
+    color: white;                       /* Simbol silang berubah putih saat di-hover */
+    transform: rotate(90deg);           /* Memutar tombol silang 90 derajat saat di-hover */
+}
+
+/* Header Bagian Judul Modal Profil */
+.profile-title {
+    margin-bottom: 35px;                /* Jarak bawah header modal profil */
+}
+
+/* Judul Utama Modal Profil */
+.profile-title h2 {
+    font-family: Georgia, serif;        /* Jenis font klasik judul modal */
+    font-size: 40px;                    /* Ukuran font judul modal */
+    font-weight: normal;                /* Berat huruf normal */
+    color: #302a27;                     /* Warna teks judul modal */
+    margin-top: 5px;                    /* Jarak atas judul modal */
+}
+
+/* Cetak Miring pada Judul Modal Profil */
+.profile-title h2 i {
+    color: #b98378;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Subjudul/Deskripsi Modal Profil */
+.profile-title p {
+    color: #8d817a;                     /* Warna teks deskripsi subjudul modal */
+    margin-top: 8px;                    /* Jarak atas dari judul */
+    font-size: 13.5px;                  /* Ukuran font subjudul modal */
+}
+
+/* Grid Tata Letak Utama Modal (Kiri Avatar, Kanan Data Informasi) */
+.profile-content {
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: 220px 1fr;   /* Kolom avatar 220px, sisa area untuk kolom data form */
+    gap: 40px;                          /* Jarak antar kolom avatar dan kolom data */
+    align-items: start;                 /* Penyejajaran elemen dimulai dari paling atas */
+}
+
+/* Wadah Bagian Avatar di Kolom Kiri */
+.profile-avatar-box {
+    display: flex;                      /* Flexbox untuk menyusun elemen secara vertikal */
+    flex-direction: column;             /* Menyusun avatar, username, dan tombol ke bawah */
+    align-items: center;                /* Posisi elemen di tengah horizontal */
+    text-align: center;                 /* Rataan teks di tengah */
+    background-color: #fcf8f5;          /* Warna latar belakang wadah avatar */
+    padding: 30px 20px;                 /* Jarak dalam wadah avatar */
+    border-radius: 20px;                /* Sudut wadah avatar dibuat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis wadah avatar */
+    box-shadow: 0 10px 20px rgba(48, 42, 39, 0.03); /* Bayangan lembut di bawah wadah avatar */
+}
+
+/* Lingkaran Foto Avatar Profil */
+.profile-avatar {
+    width: 110px;                       /* Lebar lingkaran avatar */
+    height: 110px;                      /* Tinggi lingkaran avatar */
+    border-radius: 50%;                 /* Membuat bentuk avatar menjadi lingkaran sempurna */
+    background-color: #ead8d1;          /* Warna latar belakang lingkaran avatar */
+    display: flex;                      /* Flexbox untuk menempatkan ikon di tengah */
+    align-items: center;                /* Posisi ikon di tengah vertikal */
+    justify-content: center;            /* Posisi ikon di tengah horizontal */
+    color: #806d63;                     /* Warna ikon avatar */
+    margin-bottom: 16px;                /* Jarak bawah avatar ke username */
+    border: 4px solid #fffdfb;          /* Garis pinggir putih di sekeliling avatar */
+    box-shadow: 0 8px 15px rgba(234, 216, 209, 0.5); /* Bayangan lembut di belakang avatar */
+}
+
+/* Ikon di Dalam Lingkaran Avatar */
+.profile-avatar span {
+    font-size: 60px;                    /* Ukuran font ikon avatar */
+}
+
+/* Teks Username Pengguna */
+.profile-username {
+    font-weight: bold;                  /* Mencetak tebal teks username */
+    color: #302a27;                     /* Warna teks username */
+    font-size: 15px;                    /* Ukuran font username */
+    margin-bottom: 12px;                /* Jarak bawah username ke lencana VIP */
+}
+
+/* Lencana Status VIP Member */
+.profile-badge {
+    font-size: 9.5px;                   /* Ukuran font lencana status */
+    letter-spacing: 2px;                /* Jarak antar huruf pada lencana */
+    font-weight: bold;                  /* Mencetak tebal teks lencana */
+    background: linear-gradient(135deg, #c59b92, #b98378); /* Warna gradasi dusty pink untuk lencana */
+    color: #ffffff;                     /* Warna teks lencana putih */
+    padding: 6px 14px;                  /* Jarak dalam lencana status */
+    border-radius: 20px;                /* Sudut lencana dibuat membulat */
+    box-shadow: 0 4px 10px rgba(185, 131, 120, 0.3); /* Bayangan lembut dusty pink di bawah lencana */
+}
+
+/* Grid Input Data Informasi Profil */
+.profile-info-grid {
+    display: grid;                      /* Menggunakan sistem grid */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Grid responsif otomatis menyesuaikan kolom */
+    gap: 15px;                          /* Jarak antar kotak isian info */
+    margin-bottom: 25px;                /* Jarak bawah ke kotak alamat/bio */
+}
+
+/* Kotak Isian Info Individu */
+.info-item {
+    background-color: #fcf8f5;          /* Warna latar belakang kotak info */
+    padding: 16px;                      /* Jarak dalam kotak info */
+    border-radius: 14px;                /* Sudut kotak info dibuat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak info */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus saat di-hover */
+}
+
+/* Efek Hover pada Kotak Isian Info */
+.info-item:hover {
+    transform: translateY(-4px);        /* Kotak terangkat 4px ke atas saat di-hover */
+    border-color: #c59b92;              /* Garis tepi berubah dusty pink saat di-hover */
+    box-shadow: 0 8px 15px rgba(48, 42, 39, 0.05); /* Bayangan lembut di bawah kotak */
+    background-color: #ffffff;          /* Latar berubah putih bersih saat di-hover */
+}
+
+/* Label Petunjuk Isian Modal Profil */
+.profile-information label {
+    display: flex;                      /* Flexbox untuk menata ikon dan label sejajar */
+    align-items: center;                /* Penyejajaran di tengah vertikal */
+    font-size: 9px;                     /* Ukuran font label isian */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada label */
+    color: #9a8d85;                     /* Warna teks label isian */
+    font-weight: bold;                  /* Mencetak tebal teks label */
+    margin-bottom: 6px;                 /* Jarak bawah label ke input teks */
+}
+
+/* Teks Isian Profil */
+.profile-text {
+    font-size: 15px;                    /* Ukuran font teks isian */
+    color: #302a27;                     /* Warna teks isian cokelat tua */
+    font-weight: 600;                   /* Ketebalan huruf isian */
+    word-break: break-word;             /* Pemotong kata jika teks terlalu panjang */
+}
+
+/* Kotak Alamat Pengiriman di Profil */
+.profile-address-box {
+    background-color: #fcf8f5;          /* Warna latar belakang kotak alamat */
+    padding: 20px;                      /* Jarak dalam kotak alamat */
+    border-radius: 16px;                /* Sudut kotak alamat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak alamat */
+}
+
+/* Header Kotak Alamat Profil */
+.profile-address-header {
+    display: flex;                      /* Flexbox untuk menata judul dan tombol edit sejajar */
+    justify-content: space-between;     /* Jarak merata kiri-kanan antara judul dan tombol */
+    align-items: center;                /* Penyejajaran di tengah vertikal */
+    margin-bottom: 12px;                /* Jarak bawah header alamat */
+}
+
+/* Tombol Edit Khusus Alamat Profil */
+.btn-edit-profile-address {
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis tombol edit alamat */
+    background: #ffffff;                /* Warna latar tombol putih */
+    padding: 6px 12px;                  /* Jarak dalam tombol edit alamat */
+    border-radius: 8px;                 /* Sudut tombol melengkung */
+    color: #b98378;                     /* Warna teks tombol edit dusty pink */
+    font-size: 11px;                    /* Ukuran font tombol edit */
+    font-weight: bold;                  /* Mencetak tebal teks tombol */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    transition: 0.2s;                   /* Transisi pergerakan halus */
+}
+
+/* Efek Hover Tombol Edit Alamat */
+.btn-edit-profile-address:hover {
+    background-color: #b98378;          /* Warna latar berubah dusty pink saat di-hover */
+    color: #ffffff;                     /* Warna teks berubah putih saat di-hover */
+    border-color: #b98378;              /* Garis tepi berubah dusty pink saat di-hover */
+}
+
+/* Textarea Isian Alamat / Bio di Modal Profil */
+.profile-information textarea {
+    width: 100%;                        /* Lebar textarea memenuhi kotak */
+    min-height: 90px;                   /* Tinggi minimal textarea */
+    padding: 14px;                      /* Jarak dalam textarea */
+    border: 1px solid #ded2cb;          /* Garis tepi tipis textarea */
+    border-radius: 10px;                /* Sudut textarea melengkung */
+    outline: none;                      /* Menghapus outline bawaan browser */
+    resize: none;                       /* Mencegah penyesuaian ukuran manual oleh pengguna */
+    font-family: Arial, sans-serif;     /* Jenis font textarea */
+    font-size: 14px;                    /* Ukuran font teks textarea */
+    color: #302a27;                     /* Warna teks textarea */
+    background-color: #fffdfb;          /* Warna latar textarea krem muda */
+    transition: all 0.3s ease;          /* Transisi perubahan halus */
+    line-height: 1.6;                   /* Jarak antar baris kalimat */
+}
+
+/* Textarea saat Mode Edit Aktif (Tidak Readonly) */
+.profile-information textarea:not([readonly]) {
+    background-color: #ffffff;          /* Latar textarea berubah putih saat diedit */
+    border-color: #b98378;              /* Garis tepi berubah dusty pink saat diedit */
+    box-shadow: 0 0 0 3px rgba(185, 131, 120, 0.15); /* Bayangan lembut dusty pink di sekeliling textarea */
+}
+
+/* Wadah Tombol Aksi Log Out di Modal Profil */
+.profile-actions {
+    margin-top: 35px;                   /* Jarak atas dari isi form ke tombol logout */
+    display: flex;                      /* Flexbox untuk perataan tombol */
+    justify-content: flex-end;          /* Posisi tombol diatur paling kanan */
+}
+
+/* Tombol Log Out di Modal Profil */
+.logout-button {
+    padding: 15px 30px;                 /* Jarak dalam tombol logout */
+    border: none;                       /* Menghapus garis tepi tombol */
+    border-radius: 30px;                /* Sudut tombol dibuat membulat penuh */
+    background-color: #302a27;          /* Warna latar tombol logout cokelat tua */
+    color: white;                       /* Warna teks tombol logout putih */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    font-size: 11px;                    /* Ukuran font teks tombol logout */
+    letter-spacing: 2px;                /* Jarak antar huruf pada tombol */
+    font-weight: bold;                  /* Mencetak tebal teks tombol logout */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus saat di-hover */
+    display: inline-flex;               /* Menata teks & ikon logout segaris */
+    align-items: center;                /* Posisi di tengah vertikal */
+    box-shadow: 0 6px 15px rgba(48, 42, 39, 0.15); /* Bayangan lembut di bawah tombol */
+}
+
+/* Efek Hover Tombol Log Out */
+.logout-button:hover {
+    background-color: #e56b6b;          /* Warna latar berubah merah soft saat di-hover */
+    box-shadow: 0 8px 20px rgba(229, 107, 107, 0.3); /* Bayangan kemerahan saat di-hover */
+    transform: translateY(-2px);        /* Tombol terangkat 2px ke atas saat di-hover */
+}
+
+/* Tombol Edit Profil Utama di Bawah Avatar */
+.btn-edit-profile-main {
+    margin-top: 15px;                   /* Jarak atas tombol dari lencana VIP */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis tombol edit profil */
+    background: #ffffff;                /* Warna latar belakang tombol putih */
+    padding: 8px 16px;                  /* Jarak dalam tombol edit profil */
+    border-radius: 20px;                /* Sudut tombol dibuat membulat */
+    color: #b98378;                     /* Warna teks tombol edit dusty pink */
+    font-size: 11px;                    /* Ukuran font tombol edit profil */
+    font-weight: bold;                  /* Mencetak tebal teks tombol */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus saat di-hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Bayangan lembut di bawah tombol */
+}
+
+/* Efek Hover Tombol Edit Profil Utama */
+.btn-edit-profile-main:hover {
+    background-color: #b98378;          /* Warna latar berubah dusty pink saat di-hover */
+    color: #ffffff;                     /* Warna teks berubah putih saat di-hover */
+    border-color: #b98378;              /* Garis tepi berubah dusty pink saat di-hover */
+}
+
+/* Gaya Dasar Input dalam Modal Profil */
+.profile-input {
+    width: 100%;                        /* Lebar input memenuhi kotak */
+    border: 1px solid transparent;      /* Garis tepi transparan saat mode biasa */
+    background-color: transparent;      /* Latar transparan menyatu dengan kotak */
+    font-size: 14px;                    /* Ukuran font teks input */
+    color: #302a27;                     /* Warna teks isian input */
+    font-weight: 600;                   /* Ketebalan huruf isian input */
+    font-family: inherit;               /* Jenis font mengikuti turunan body */
+    padding: 2px 0;                     /* Jarak dalam atas-bawah input */
+    outline: none;                      /* Menghapus outline bawaan browser */
+    transition: all 0.3s ease;          /* Perubahan halus saat status input berubah */
+}
+
+/* Reset Panah Dropdown Select saat Disembunyikan */
+select.profile-input {
+    appearance: none;                   /* Menghapus tanda panah bawaan browser */
+    -webkit-appearance: none;           /* Menghapus tanda panah di browser Safari/Chrome */
+}
+
+/* Gaya Input saat Mode Edit Aktif (Kecuali yang Terkunci) */
+.profile-input:not([readonly]):not(:disabled) {
+    background-color: #ffffff;          /* Latar input berubah putih saat diedit */
+    border: 1px solid #b98378;          /* Garis tepi berubah dusty pink saat diedit */
+    border-radius: 8px;                 /* Sudut kotak input melengkung saat diedit */
+    padding: 8px 12px;                  /* Jarak dalam input saat mode edit aktif */
+    box-shadow: 0 0 0 3px rgba(185, 131, 120, 0.15); /* Bayangan lembut dusty pink di sekeliling input */
+}
+
+/* Menampilkan Panah Dropdown Select saat Mode Edit Aktif */
+select.profile-input:not(:disabled) {
+    appearance: auto;                   /* Menampilkan kembali panah dropdown bawaan */
+    -webkit-appearance: auto;           /* Menampilkan panah di browser Safari/Chrome */
+}
+
+/* Gaya Input Email yang Terkunci Permanen */
+.profile-input.input-locked {
+    color: #9a8d85;                     /* Warna teks input terkunci dibuat lebih pudar */
+    cursor: not-allowed;                /* Kursor berubah bentuk dilarang saat diarahkan */
+}
+
+/* Mencegah Efek Fokus pada Input Terkunci */
+.profile-input.input-locked:focus {
+    border-color: transparent !important; /* Dipaksa tanpa garis tepi saat difokuskan */
+    box-shadow: none !important;        /* Dipaksa tanpa bayangan saat difokuskan */
+    background-color: transparent !important; /* Dipaksa tetap transparan saat difokuskan */
+}
+
+/* Kotak Tambahan Bio & Alamat di Modal Profil */
+.profile-bio-box, .profile-address-box {
+    background-color: #fcf8f5;          /* Warna latar belakang kotak bio & alamat */
+    padding: 16px;                      /* Jarak dalam kotak bio & alamat */
+    border-radius: 14px;                /* Sudut kotak dibuat melengkung */
+    border: 1px solid #e4d8d0;          /* Garis tepi tipis kotak bio & alamat */
+    margin-bottom: 15px;                /* Jarak bawah dari kotak sebelumnya */
+    transition: all 0.3s ease;          /* Transisi perubahan halus */
+}
+
+/* Label Petunjuk Kotak Bio & Alamat */
+.profile-bio-box label, .profile-address-box label {
+    display: flex;                      /* Flexbox untuk menata ikon dan label sejajar */
+    align-items: center;                /* Penyejajaran di tengah vertikal */
+    font-size: 9px;                     /* Ukuran font label bio & alamat */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada label */
+    color: #9a8d85;                     /* Warna teks label bio & alamat */
+    font-weight: bold;                  /* Mencetak tebal teks label */
+    margin-bottom: 8px;                 /* Jarak bawah label ke textarea */
+}
+
+/* Pengaturan Tinggi Minimal Textarea Bio & Alamat */
+.profile-bio-box textarea { min-height: 60px; resize: none; } /* Tinggi minimal kotak bio & kunci ubah ukuran */
+.profile-address-box textarea { min-height: 80px; resize: none; } /* Tinggi minimal kotak alamat & kunci ubah ukuran */
+
+/* Ikon Google Material Symbols */
+.material-symbols-outlined {
+    font-size: 16px;                    /* Ukuran font ikon simbol */
+    vertical-align: middle;             /* Posisi vertikal di tengah teks */
+    margin-right: 4px;                  /* Jarak kanan dari teks di sebelahnya */
+}

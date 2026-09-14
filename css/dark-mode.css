@@ -1,0 +1,687 @@
+/* Variabel Warna Utama Mode Gelap */
+html.dark-mode {
+    --lc-bg: #1a1613;                   /* Warna latar belakang utama cokelat gelap pekat */
+    --lc-bg-soft: #211c19;              /* Warna latar belakang sekunder cokelat gelap agak terang */
+    --lc-card: #251f1c;                 /* Warna latar kartu utama */
+    --lc-card-alt: #2c2521;             /* Warna latar kartu alternatif/sub-kotak */
+    --lc-border: #3d332e;               /* Warna garis tepi/border gelap */
+    --lc-text: #f2e7e0;                 /* Warna teks utama krem terang */
+    --lc-text-soft: #c8bbb4;            /* Warna teks lembut/sub-deskripsi */
+    --lc-text-mute: #9a8d85;            /* Warna teks pudar/redup */
+    --lc-accent: #e8a598;               /* Warna aksen utama dusty pink terang */
+    --lc-accent-dark: #d67b68;          /* Warna aksen dusty pink lebih gelap */
+}
+
+/* ---------- Global ---------- */
+/* Gaya Dasar Body Mode Gelap */
+html.dark-mode body {
+    background-color: var(--lc-bg);      /* Menyetel warna latar belakang body jadi cokelat gelap */
+    color: var(--lc-text);              /* Menyetel warna teks default body jadi krem terang */
+}
+
+/* ---------- Navbar (semua halaman) ---------- */
+/* Latar Belakang Navbar Utama, About Navbar, dan Bilah Navigasi */
+html.dark-mode .navbar,
+html.dark-mode .about-navbar,
+html.dark-mode .bilah-navigasi {
+    background-color: rgba(26, 22, 19, 0.95); /* Warna latar navbar gelap transparan 95% */
+    border-bottom-color: var(--lc-border); /* Warna garis bawah navbar jadi cokelat border gelap */
+}
+
+/* Teks Logo Navigasi */
+html.dark-mode .nav-logo,
+html.dark-mode .about-logo,
+html.dark-mode .logo-navigasi {
+    color: var(--lc-text);              /* Warna teks logo berubah jadi krem terang */
+}
+
+/* Tautan Menu Navigasi */
+html.dark-mode .nav-link {
+    color: var(--lc-text-soft);         /* Warna teks menu navigasi berubah jadi krem lembut */
+}
+
+/* Tautan Menu Navigasi saat Ditunjuk atau Aktif */
+html.dark-mode .nav-link:hover,
+html.dark-mode .nav-link.active {
+    color: #1a1613;                     /* Teks menu berubah gelap saat di-hover/aktif */
+    background-color: var(--lc-accent); /* Latar menu berubah dusty pink saat di-hover/aktif */
+}
+
+/* Tombol Ikon Navigasi (Dark Mode, Cart, Profile) */
+html.dark-mode .nav-icon {
+    background-color: var(--lc-card);   /* Latar belakang tombol ikon jadi cokelat kartu gelap */
+    border-color: var(--lc-border);     /* Warna garis tepi tombol ikon */
+    color: var(--lc-text-soft);         /* Warna ikon di dalam tombol */
+}
+
+/* Tombol Kembali Halaman */
+html.dark-mode .page-back,
+html.dark-mode .tombol-kembali {
+    color: var(--lc-text-soft);         /* Warna teks tombol kembali jadi krem lembut */
+}
+
+/* ---------- Hero (home) ---------- */
+/* Seksi Hero Beranda */
+html.dark-mode .hero {
+    background-color: var(--lc-bg);      /* Latar seksi hero diubah jadi cokelat gelap */
+}
+
+/* Teks Kecil Penanda di Hero & Seksi */
+html.dark-mode .hero-small,
+html.dark-mode .section-small {
+    color: var(--lc-accent);            /* Warna teks penanda kecil berubah jadi dusty pink */
+}
+
+/* Deskripsi Teks Hero */
+html.dark-mode .hero-description {
+    color: var(--lc-text-soft);         /* Warna deskripsi hero jadi krem lembut */
+}
+
+/* Cetak Miring Judul Hero & Logo Kartu Hero */
+html.dark-mode .hero h1 i,
+html.dark-mode .hero-card-top {
+    color: var(--lc-accent);            /* Teks miring & logo kartu hero jadi dusty pink */
+}
+
+/* Lingkaran Dekorasi Visual Hero */
+html.dark-mode .hero-circle {
+    background-color: var(--lc-card-alt); /* Latar belakang lingkaran visual jadi cokelat kartu alt */
+}
+
+/* Kartu Melayang Estetis di Hero */
+html.dark-mode .hero-card {
+    background-color: var(--lc-card);   /* Latar belakang kartu hero jadi cokelat kartu gelap */
+    border-color: var(--lc-border);     /* Garis tepi kartu hero jadi border gelap */
+    color: var(--lc-text);              /* Warna teks di dalam kartu hero jadi krem terang */
+}
+
+/* Tombol Utama di Seksi Hero */
+html.dark-mode .hero-button {
+    background-color: var(--lc-accent); /* Latar tombol hero berubah dusty pink */
+    color: #1a1613;                     /* Warna teks tombol berubah jadi cokelat gelap */
+}
+
+/* Tombol Garis Tepi (Outline) di Hero */
+html.dark-mode .hero-button.btn-outline {
+    background-color: transparent;      /* Latar tombol outline tetap transparan */
+    border-color: var(--lc-border);     /* Garis tepi tombol outline jadi border gelap */
+    color: var(--lc-text);              /* Warna teks tombol outline jadi krem terang */
+}
+
+/* ---------- Category / preview cards ---------- */
+/* Seksi Pratinjau Kategori & Top Rated */
+html.dark-mode .category-preview,
+html.dark-mode .top-preview {
+    background-color: var(--lc-bg-soft); /* Latar seksi kategori & top jadi cokelat gelap agak terang */
+}
+
+/* Kartu Pratinjau Kategori & Kartu Cerita */
+html.dark-mode .preview-card {
+    background-color: var(--lc-card);   /* Latar belakang kartu pratinjau jadi cokelat kartu */
+    border-color: var(--lc-border);     /* Garis tepi kartu pratinjau */
+    color: var(--lc-text);              /* Warna teks judul kartu pratinjau */
+}
+
+/* Teks Deskripsi Kecil Kartu Pratinjau */
+html.dark-mode .preview-card p {
+    color: var(--lc-text-mute);         /* Teks deskripsi kartu jadi pudar */
+}
+
+/* Tautan Lihat Semua & Tombol Aksi Kategori */
+html.dark-mode .view-all,
+html.dark-mode .top-button,
+html.dark-mode .about-button,
+html.dark-mode .shop-button {
+    color: var(--lc-accent);            /* Warna tautan & tombol aksi jadi dusty pink */
+}
+
+/* Seksi Pratinjau About di Beranda */
+html.dark-mode .about-preview {
+    background-color: var(--lc-card-alt); /* Latar seksi pratinjau about jadi cokelat kartu alt */
+}
+
+/* Paragraf Seksi Pratinjau About & Top */
+html.dark-mode .about-preview p,
+html.dark-mode .top-preview p {
+    color: var(--lc-text-soft);         /* Warna paragraf pratinjau jadi krem lembut */
+}
+
+/* ---------- Product header / search / filter (all-product & top) ---------- */
+/* Header Katalog Produk & Top Rated */
+html.dark-mode .product-header,
+html.dark-mode .top-header {
+    background-color: var(--lc-bg);      /* Latar header katalog diubah jadi cokelat gelap */
+}
+
+/* Paragraf Subjudul Header Produk */
+html.dark-mode .product-header p,
+html.dark-mode .top-header p {
+    color: var(--lc-text-soft);         /* Warna paragraf header produk jadi krem lembut */
+}
+
+/* Kotak Input Pencarian Produk */
+html.dark-mode .product-search-box {
+    background-color: var(--lc-card);   /* Latar kotak pencarian jadi cokelat kartu gelap */
+    border-color: var(--lc-border);     /* Garis tepi kotak pencarian */
+}
+
+/* Teks Input Ketikan Pencarian */
+html.dark-mode .product-search-box input {
+    color: var(--lc-text);              /* Warna teks yang diketik di kolom pencarian jadi krem terang */
+}
+
+/* Tombol Filter Kategori Produk */
+html.dark-mode .category-filter {
+    background-color: var(--lc-card);   /* Latar tombol filter jadi cokelat kartu gelap */
+    border-color: var(--lc-border);     /* Garis tepi tombol filter */
+    color: var(--lc-text-soft);         /* Warna teks tombol filter jadi krem lembut */
+}
+
+/* Tombol Filter Kategori saat Ditunjuk atau Aktif */
+html.dark-mode .category-filter:hover,
+html.dark-mode .category-filter.active {
+    background-color: var(--lc-accent); /* Latar tombol filter aktif berubah dusty pink */
+    border-color: var(--lc-accent);     /* Garis tepi tombol filter aktif berubah dusty pink */
+    color: #1a1613;                     /* Teks tombol filter aktif berubah jadi cokelat gelap */
+}
+
+/* ---------- Product cards ---------- */
+/* Kartu Produk Katalog */
+html.dark-mode .product-card {
+    background-color: var(--lc-card);   /* Latar belakang kartu produk jadi cokelat kartu gelap */
+    border-color: var(--lc-border);     /* Garis tepi kartu produk */
+}
+
+/* Wadah Pembungkus Gambar Produk */
+html.dark-mode .product-image {
+    background-color: var(--lc-card-alt); /* Latar wadah gambar produk jadi cokelat kartu alt */
+}
+
+/* Teks Nama Produk */
+html.dark-mode .product-name {
+    color: var(--lc-text);              /* Warna nama produk jadi krem terang */
+}
+
+/* Teks Kosong & Teks Memuat */
+html.dark-mode .empty-text,
+html.dark-mode .loading-text {
+    color: var(--lc-text-soft);         /* Warna teks kosong & loading jadi krem lembut */
+}
+
+/* ---------- Pagination ---------- */
+/* Tombol Angka Halaman (Pagination) */
+html.dark-mode .pagination-btn {
+    background-color: var(--lc-accent); /* Latar tombol pagination aktif jadi dusty pink */
+    border-color: var(--lc-accent);     /* Garis tepi tombol pagination aktif */
+    color: #1a1613;                     /* Teks tombol pagination aktif jadi cokelat gelap */
+}
+
+/* Tombol Pagination saat Dinonaktifkan */
+html.dark-mode .pagination-btn:disabled {
+    background-color: var(--lc-card);   /* Latar tombol pagination mati jadi cokelat kartu */
+    border-color: var(--lc-border);     /* Garis tepi tombol pagination mati */
+    color: var(--lc-text-mute);         /* Teks tombol pagination mati jadi pudar */
+}
+
+/* Teks Informasi Halaman Pagination */
+html.dark-mode .pagination-info {
+    color: var(--lc-text-soft);         /* Warna teks info pagination jadi krem lembut */
+}
+
+/* ---------- Product popup ---------- */
+/* Kotak Utama Pop-up Detail Produk */
+html.dark-mode .product-popup-box {
+    background-color: var(--lc-card);   /* Latar belakang pop-up produk jadi cokelat kartu */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55); /* Bayangan pop-up dibuat lebih pekat di mode gelap */
+}
+
+/* Wadah Gambar di Pop-up Produk */
+html.dark-mode .product-popup-image {
+    background-color: var(--lc-card-alt); /* Latar belakang gambar pop-up jadi cokelat kartu alt */
+}
+
+/* Judul & Harga di Pop-up Produk */
+html.dark-mode .product-popup-content h2,
+html.dark-mode .product-popup-content h3 {
+    color: var(--lc-text);              /* Warna judul & teks pop-up jadi krem terang */
+}
+
+/* Teks Deskripsi Pop-up Produk */
+html.dark-mode #popup-description {
+    color: var(--lc-text-soft);         /* Warna teks deskripsi pop-up produk jadi krem lembut */
+}
+
+/* Teks Stok & Label Ukuran Pop-up */
+html.dark-mode #popup-stock,
+html.dark-mode .popup-size-group label {
+    color: var(--lc-text-mute);         /* Warna stok & label ukuran jadi pudar */
+}
+
+/* Tombol Tutup Pop-up Produk */
+html.dark-mode .popup-close {
+    background-color: var(--lc-card-alt); /* Latar tombol silang tutup jadi cokelat kartu alt */
+    color: var(--lc-text-soft);         /* Warna ikon silang jadi krem lembut */
+}
+
+/* Tombol Pilihan Ukuran Produk */
+html.dark-mode .size-btn {
+    background-color: var(--lc-card-alt); /* Latar tombol ukuran produk jadi cokelat kartu alt */
+    border-color: var(--lc-border);     /* Garis tepi tombol ukuran */
+    color: var(--lc-text-soft);         /* Warna teks tombol ukuran jadi krem lembut */
+}
+
+/* Tombol Pilihan Ukuran saat Aktif/Dipilih */
+html.dark-mode .size-btn.active {
+    background-color: var(--lc-accent); /* Latar tombol ukuran terpilih berubah dusty pink */
+    border-color: var(--lc-accent);     /* Garis tepi tombol ukuran terpilih */
+    color: #1a1613;                     /* Teks tombol ukuran terpilih jadi cokelat gelap */
+}
+
+/* Tombol Tambah ke Keranjang di Pop-up */
+html.dark-mode .add-cart-button {
+    background-color: var(--lc-card-alt); /* Latar tombol tambah keranjang jadi cokelat kartu alt */
+    border-color: var(--lc-text);       /* Garis tepi tombol tambah keranjang jadi krem terang */
+    color: var(--lc-text);              /* Warna teks tombol tambah keranjang jadi krem terang */
+}
+
+/* Tombol Beli Sekarang / Checkout di Pop-up */
+html.dark-mode .checkout-button {
+    background-color: var(--lc-accent); /* Latar tombol checkout berubah dusty pink */
+    color: #1a1613;                     /* Warna teks tombol checkout jadi cokelat gelap */
+}
+
+/* ---------- Profile popup ---------- */
+/* ---------- Profile popup (Di-perbaiki) ---------- */
+/* Latar Belakang Transparan Overlay Pop-up Profil */
+html.dark-mode .profile-popup {
+    background-color: rgba(0, 0, 0, 0.65); /* Latar belakang hitam transparan 65% */
+}
+
+/* Kotak Utama Modal Profil */
+html.dark-mode .profile-box {
+    background-color: var(--lc-card);   /* Latar belakang modal profil jadi cokelat kartu */
+}
+
+/* Judul Modal Profil & Ikon Hati */
+html.dark-mode .profile-title h2,
+html.dark-mode .profile-title h2 i {
+    color: var(--lc-text);              /* Warna judul modal profil jadi krem terang */
+}
+
+/* Subjudul Modal & Teks Username */
+html.dark-mode .profile-title p,
+html.dark-mode .profile-username {
+    color: var(--lc-text-soft);         /* Warna subjudul & username profil jadi krem lembut */
+}
+
+/* Kotak Avatar & Kotak-Kotak Isian Form Profil */
+html.dark-mode .profile-avatar-box,
+html.dark-mode .info-item,
+html.dark-mode .profile-bio-box,
+html.dark-mode .profile-address-box {
+    background-color: var(--lc-card-alt); /* Latar kotak isian profil jadi cokelat kartu alt */
+    border-color: var(--lc-border);     /* Garis tepi kotak isian profil */
+}
+
+/* Lingkaran Foto Avatar Profil */
+html.dark-mode .profile-avatar {
+    background-color: var(--lc-bg-soft); /* Latar belakang ikon avatar jadi cokelat gelap sekunder */
+    color: var(--lc-text-soft);         /* Warna ikon avatar jadi krem lembut */
+}
+
+/* Label Judul Isian Profil (NAMA LENGKAP, EMAIL, JENIS KELAMIN, BIO, ALAMAT) */
+html.dark-mode .info-item label,
+html.dark-mode .profile-bio-box label,
+html.dark-mode .profile-address-box label {
+    color: var(--lc-accent);            /* Label isian profil berubah dusty pink */
+}
+
+/* Kolom Input & Textarea saat Mode Edit Aktif (Tidak Readonly) */
+html.dark-mode .profile-input:not([readonly]):not(:disabled),
+html.dark-mode .profile-bio-box textarea:not([readonly]),
+html.dark-mode .profile-address-box textarea:not([readonly]) {
+    background-color: var(--lc-bg) !important; /* Latar belakang input saat diedit jadi cokelat gelap */
+    border: 1px solid var(--lc-accent) !important; /* Garis tepi input diedit berubah dusty pink */
+    color: #ffffff !important;          /* Warna teks ketikan saat diedit jadi putih jelas */
+}
+
+/* Kolom Input & Textarea saat Terkunci (Readonly / Input Locked) */
+html.dark-mode .profile-input.input-locked,
+html.dark-mode .profile-input[readonly],
+html.dark-mode .profile-bio-box textarea[readonly],
+html.dark-mode .profile-address-box textarea[readonly] {
+    background-color: transparent !important; /* Latar input terkunci transparan menyatu kotak */
+    color: var(--lc-text) !important;  /* Warna teks input terkunci jadi krem terang */
+}
+
+/* PERBAIKAN: Dropdown Jenis Kelamin saat Terkunci (Disabled) di Mode Gelap */
+html.dark-mode select.profile-input:disabled {
+    background-color: transparent !important; /* Latar dropdown tetap transparan */
+    color: var(--lc-text) !important;       /* Paksa warna teks pilihan jadi krem terang */
+    -webkit-text-fill-color: var(--lc-text) !important; /* Mengatasi warna pudar bawaan browser Chrome/Edge */
+    opacity: 1 !important;                  /* Memastikan tingkat transparansi penuh 100% */
+}
+
+/* Tombol Edit Profil Utama */
+html.dark-mode .btn-edit-profile-main {
+    background-color: var(--lc-accent); /* Latar belakang tombol edit profil jadi dusty pink */
+    color: #1a1613;                     /* Warna teks tombol edit profil jadi cokelat gelap */
+}
+
+/* Tombol Keluar / Log Out Modal Profil */
+html.dark-mode .logout-button {
+    background-color: var(--lc-card-alt); /* Latar tombol logout jadi cokelat kartu alt */
+    border-color: var(--lc-border);     /* Garis tepi tombol logout */
+    color: var(--lc-text);              /* Warna teks tombol logout jadi krem terang */
+}
+
+/* ---------- Footer ---------- */
+/* Seksi Footer Utama */
+html.dark-mode .footer {
+    background-color: var(--lc-bg-soft); /* Latar footer jadi cokelat gelap agak terang */
+    border-top-color: var(--lc-border); /* Garis batas atas footer */
+}
+
+/* Logo Footer & Judul Kolom Footer */
+html.dark-mode .footer-logo,
+html.dark-mode .footer-text h3 {
+    color: var(--lc-text);              /* Warna logo & judul footer jadi krem terang */
+}
+
+/* Teks Paragraf Footer */
+html.dark-mode .footer-text p {
+    color: var(--lc-text-soft);         /* Warna deskripsi footer jadi krem lembut */
+}
+
+/* Teks Hak Cipta / Copyright Footer */
+html.dark-mode .footer-copy {
+    color: var(--lc-text-mute);         /* Warna teks copyright footer jadi pudar */
+}
+
+/* ---------- About page (Di-perbaiki) ---------- */
+/* Seksi Hero Halaman About */
+html.dark-mode .about-hero {
+    background-color: var(--lc-card-alt) !important; /* Latar seksi hero about jadi cokelat kartu alt */
+}
+
+/* Judul Utama Halaman About */
+html.dark-mode .about-hero h1 {
+    color: var(--lc-text) !important;   /* Warna judul hero tentang kami jadi krem terang */
+}
+
+/* Sub-paragraf Terakhir Halaman About */
+html.dark-mode .about-hero > p:last-child {
+    color: var(--lc-text-soft) !important; /* Warna teks deskripsi hero about jadi krem lembut */
+}
+
+/* Kartu Cerita / Story Card Halaman About */
+html.dark-mode .story-card {
+    background-color: var(--lc-card);   /* Latar belakang kartu cerita jadi cokelat kartu */
+    color: var(--lc-text);              /* Warna teks kartu cerita jadi krem terang */
+}
+
+/* Kartu Cerita Kedua Halaman About */
+html.dark-mode .story-card.second {
+    background-color: var(--lc-card-alt); /* Latar kartu cerita kedua jadi cokelat kartu alt */
+}
+
+/* Judul di dalam Kartu Cerita */
+html.dark-mode .story-card h2 {
+    color: var(--lc-text);              /* Warna judul kartu cerita jadi krem terang */
+}
+
+/* Paragraf di dalam Kartu Cerita */
+html.dark-mode .story-card p {
+    color: var(--lc-text-soft);         /* Warna paragraf cerita jadi krem lembut */
+}
+
+/* Seksi Pemilik / Owner Halaman About */
+html.dark-mode .owner-section {
+    background-color: var(--lc-bg);      /* Latar seksi pemilik jadi cokelat gelap */
+}
+
+/* Wadah Foto Pemilik & Placeholder Foto */
+html.dark-mode .owner-photo,
+html.dark-mode .photo-placeholder {
+    background-color: var(--lc-card-alt); /* Latar bingkai foto pemilik jadi cokelat kartu alt */
+    color: var(--lc-text-soft);         /* Warna ikon foto placeholder jadi krem lembut */
+}
+
+/* Judul Teks Pemilik */
+html.dark-mode .owner-text h2 {
+    color: var(--lc-text);              /* Warna judul seksi pemilik jadi krem terang */
+}
+
+/* Paragraf Deskripsi Pemilik */
+html.dark-mode .owner-text > p:not(.section-small):not(.owner-signature) {
+    color: var(--lc-text-soft);         /* Warna deskripsi pemilik jadi krem lembut */
+}
+
+/* Teks Tanda Tangan Pemilik */
+html.dark-mode .owner-signature {
+    color: var(--lc-accent);            /* Warna teks tanda tangan pemilik jadi dusty pink */
+}
+
+/* Bagian Penutup Halaman About */
+html.dark-mode .about-ending {
+    background-color: #0f0d0b;          /* Latar belakang bagian penutup dibuat cokelat sangat gelap */
+}
+
+/* Footer Khusus Halaman About */
+html.dark-mode .about-footer {
+    background-color: #0f0d0b;          /* Latar belakang footer about jadi cokelat sangat gelap */
+    border-top-color: var(--lc-border); /* Garis tepi atas footer about */
+}
+
+/* ---------- Cart page ---------- */
+/* Halaman Utama Keranjang Belanja */
+html.dark-mode .halaman-keranjang {
+    background-color: var(--lc-bg);      /* Latar belakang halaman keranjang jadi cokelat gelap */
+}
+
+/* Judul Header Halaman Keranjang */
+html.dark-mode .pala-keranjang h1 {
+    color: var(--lc-text);              /* Warna judul header keranjang jadi krem terang */
+}
+
+/* Deskripsi Header Halaman Keranjang */
+html.dark-mode .pala-keranjang p {
+    color: var(--lc-text-soft);         /* Warna deskripsi keranjang jadi krem lembut */
+}
+
+/* Kotak Pilihan, Keranjang Kosong, Item Keranjang, Alamat, & Ringkasan */
+html.dark-mode .kotak-pilih-semua,
+html.dark-mode .keranjang-kosong,
+html.dark-mode .item-keranjang,
+html.dark-mode .kotak-alamat,
+html.dark-mode .kotak-ringkasan {
+    background-color: var(--lc-card);   /* Latar kotak-kotak keranjang jadi cokelat kartu */
+    border-color: var(--lc-border);     /* Garis tepi komponen keranjang */
+}
+
+/* Label Pilih Semua, Nama Barang Keranjang, & Judul Ringkasan */
+html.dark-mode .kotak-pilih-semua label,
+html.dark-mode .nama-item-keranjang,
+html.dark-mode .kotak-ringkasan h2 {
+    color: var(--lc-text);              /* Warna teks nama barang & judul ringkasan jadi krem terang */
+}
+
+/* Teks Keranjang Kosong */
+html.dark-mode .keranjang-kosong {
+    color: var(--lc-text-soft);         /* Warna teks keranjang kosong jadi krem lembut */
+}
+
+/* Wadah Gambar Barang & Kotak Pengatur Jumlah Barang */
+html.dark-mode .gambar-item-keranjang,
+html.dark-mode .kotak-jumlah {
+    background-color: var(--lc-card-alt); /* Latar belakang wadah gambar & jumlah barang jadi cokelat alt */
+    border-color: var(--lc-border);     /* Garis tepi pengatur jumlah barang */
+}
+
+/* Tombol Tambah/Kurang Jumlah Barang */
+html.dark-mode .kotak-jumlah button {
+    background-color: var(--lc-card);   /* Latar tombol pengatur jumlah barang jadi cokelat kartu */
+    color: var(--lc-text);              /* Warna teks tombol jumlah barang jadi krem terang */
+}
+
+/* Tombol Hapus Item Keranjang */
+html.dark-mode .tombol-hapus {
+    background-color: var(--lc-card-alt); /* Latar tombol hapus item jadi cokelat kartu alt */
+    color: var(--lc-text-soft);         /* Warna ikon/teks hapus item jadi krem lembut */
+}
+
+/* Judul Seksi Alamat Pengiriman */
+html.dark-mode .pala-alamat-kiri h3 {
+    color: var(--lc-accent);            /* Warna judul alamat pengiriman jadi dusty pink */
+}
+
+/* Tombol Edit Alamat Pengiriman */
+html.dark-mode .tombol-edit-alamat {
+    background-color: var(--lc-card-alt); /* Latar tombol edit alamat jadi cokelat kartu alt */
+    border-color: var(--lc-border);     /* Garis tepi tombol edit alamat */
+    color: var(--lc-text-soft);         /* Warna teks tombol edit alamat jadi krem lembut */
+}
+
+/* Label Input Alamat & Pembayaran */
+html.dark-mode .kotak-alamat label,
+html.dark-mode .kelompok-pembayaran label {
+    color: var(--lc-text-mute);         /* Warna label pilihan alamat & pembayaran jadi pudar */
+}
+
+/* Element Input, Select, & Textarea di Kotak Alamat */
+html.dark-mode .kotak-alamat input,
+html.dark-mode .kotak-alamat select,
+html.dark-mode .kotak-alamat textarea,
+html.dark-mode .kelompok-pembayaran select {
+    background-color: var(--lc-card-alt); /* Latar belakang input form alamat jadi cokelat kartu alt */
+    border-color: var(--lc-border);     /* Garis tepi form input alamat */
+    color: var(--lc-text);              /* Warna teks isian form alamat jadi krem terang */
+}
+
+/* Input & Textarea Alamat saat Mode Readonly */
+html.dark-mode .kotak-alamat input[readonly],
+html.dark-mode .kotak-alamat textarea[readonly] {
+    background-color: var(--lc-bg-soft); /* Latar input alamat terkunci jadi cokelat gelap sekunder */
+    color: var(--lc-text-soft);         /* Warna teks input alamat terkunci jadi krem lembut */
+}
+
+/* Baris Ringkasan Belanja */
+html.dark-mode .baris-ringkasan {
+    color: var(--lc-text-soft);         /* Warna teks baris rincian ringkasan jadi krem lembut */
+}
+
+/* Tombol Lanjut Checkout */
+html.dark-mode .tombol-checkout {
+    background-color: var(--lc-accent); /* Latar belakang tombol checkout berubah dusty pink */
+    color: #1a1613;                     /* Warna teks tombol checkout jadi cokelat gelap */
+}
+
+/* Overlay Pop-up QRIS Pembayaran */
+html.dark-mode .modal-qris {
+    background-color: rgba(0, 0, 0, 0.7); /* Latar transparan latar modal QRIS jadi 70% */
+}
+
+/* Kotak Utama Modal QRIS */
+html.dark-mode .kotak-qris {
+    background-color: var(--lc-card);   /* Latar belakang kotak QRIS jadi cokelat kartu */
+}
+
+/* Judul Modal QRIS */
+html.dark-mode .kotak-qris h2 {
+    color: var(--lc-text);              /* Warna judul pembayaran QRIS jadi krem terang */
+}
+
+/* Subjudul Modal QRIS */
+html.dark-mode .subjudul-qris {
+    color: var(--lc-text-soft);         /* Warna teks petunjuk QRIS jadi krem lembut */
+}
+
+/* Kartu Pembungkus Gambar QRIS */
+html.dark-mode .kartu-qris {
+    background-color: var(--lc-card-alt); /* Latar kartu pembungkus QRIS jadi cokelat kartu alt */
+    border-color: var(--lc-border);     /* Garis tepi kartu QRIS */
+}
+
+/* Wadah Gambar Barcode QRIS */
+html.dark-mode .pembungkus-gambar-qris {
+    background-color: var(--lc-text);   /* Latar belakang barcode QRIS dibuat terang agar mudah dipindai */
+    border-color: var(--lc-border);     /* Garis tepi pembungkus gambar QRIS */
+}
+
+/* ---------- Login page ---------- */
+/* Seksi Formulir Login */
+html.dark-mode .form-section {
+    background-color: var(--lc-bg);      /* Latar seksi form login diubah jadi cokelat gelap */
+}
+
+/* Judul Kotak Form Login */
+html.dark-mode .box h2 {
+    color: var(--lc-text);              /* Warna judul form login jadi krem terang */
+}
+
+/* Deskripsi & Judul Kecil Form Login */
+html.dark-mode .deskripsi,
+html.dark-mode .judul-kecil {
+    color: var(--lc-text-soft);         /* Warna teks deskripsi login jadi krem lembut */
+}
+
+/* Label Input Form Login */
+html.dark-mode .input label {
+    color: var(--lc-text);              /* Warna label input login jadi krem terang */
+}
+
+/* Kolom Input Form Login */
+html.dark-mode .input input {
+    background: transparent;            /* Latar belakang kolom input login dibuat transparan */
+    border-bottom-color: var(--lc-border); /* Garis bawah input login diubah jadi border gelap */
+    color: var(--lc-text);              /* Warna teks ketikan kolom login jadi krem terang */
+}
+
+/* Kolom Input Login saat Ditetapkan / Fokus Ketik */
+html.dark-mode .input input:focus {
+    border-bottom-color: var(--lc-accent); /* Garis bawah input login saat diketik berubah dusty pink */
+}
+
+/* Tombol Masuk / Submit Form Login */
+html.dark-mode .tombol {
+    background-color: var(--lc-accent); /* Latar belakang tombol login berubah dusty pink */
+    color: #1a1613;                     /* Warna teks tombol login jadi cokelat gelap */
+}
+
+/* Teks Tautan Pendaftaran Akun */
+html.dark-mode .daftar {
+    color: var(--lc-text-soft);         /* Warna teks pertanyaan pendaftaran jadi krem lembut */
+}
+
+/* Tombol Pindah ke Form Daftar */
+html.dark-mode .daftar button {
+    color: var(--lc-accent);            /* Warna teks tombol registrasi berubah dusty pink */
+}
+
+/* Footer Halaman Login */
+html.dark-mode footer {
+    color: var(--lc-text-mute);         /* Warna teks footer halaman login jadi pudar */
+}
+
+/* ---------- Override Warna Teks Harga di Mode Gelap ---------- */
+
+/* Harga produk di katalog (all-product.html & top.html) */
+html.dark-mode .product-price {
+    color: var(--lc-accent) !important; /* Warna teks harga di katalog dipaksa jadi dusty pink */
+}
+
+/* Harga produk di dalam keranjang belanja (cart.html) */
+html.dark-mode .harga-item-keranjang {
+    color: var(--lc-accent) !important; /* Warna teks harga item di keranjang dipaksa dusty pink */
+}
+
+/* Harga di dalam Pop-up Detail Produk */
+html.dark-mode .product-popup-content h3 {
+    color: var(--lc-text) !important;  /* Warna teks harga di pop-up produk dipaksa krem terang */
+}
+
+/* Total Pembayaran di Halaman Keranjang & Pop-up QRIS */
+html.dark-mode .baris-ringkasan strong,
+html.dark-mode #total-nominal-qris {
+    color: var(--lc-accent) !important; /* Warna teks total bayar keranjang & QRIS dipaksa dusty pink */
+}

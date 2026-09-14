@@ -1,0 +1,495 @@
+/* Reset CSS untuk menyamakan tampilan di semua browser */
+* {
+    margin: 0;                          /* Menghapus jarak luar bawaan browser */
+    padding: 0;                         /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box;             /* Memastikan ukuran elemen dihitung termasuk padding & border */
+}
+
+/* Gaya dasar untuk elemen body */
+body {
+    font-family: Arial, sans-serif;     /* Jenis font utama halaman */
+    background-color: #fcf8f5;          /* Warna latar belakang utama krem halus */
+    color: #2b2320;                     /* Warna teks utama cokelat tua pekat */
+}
+
+/* Navbar Navigasi Utama */
+.navbar {
+    position: sticky;                   /* Memuat navbar menempel saat di-scroll */
+    top: 0;                             /* Mematok posisi navbar paling atas */
+    z-index: 100;                       /* Posisi penumpukan navbar di atas elemen biasa */
+    min-height: 80px;                   /* Tinggi minimal navbar */
+    padding: 15px 6%;                   /* Jarak dalam navbar (atas-bawah 15px, kiri-kanan 6%) */
+    background-color: rgba(255, 253, 251, 0.95); /* Latar transparan navbar krem muda 95% */
+    backdrop-filter: blur(12px);        /* Efek pemburaman latar di belakang navbar */
+    border-bottom: 1px solid #f0e4dd;   /* Garis pembatas bawah navbar */
+    display: flex;                      /* Flexbox untuk menata elemen navbar sejajar */
+    align-items: center;                /* Posisi elemen navbar di tengah vertikal */
+    justify-content: space-between;     /* Jarak merata antar elemen logo, menu, dan aksi */
+    gap: 20px;                          /* Jarak antar kelompok elemen di navbar */
+}
+
+/* Logo LÉSCIA di Navbar */
+.nav-logo {
+    color: #2b2320;                     /* Warna teks logo cokelat tua */
+    text-decoration: none;              /* Menghapus garis bawah tautan logo */
+    font-size: 24px;                    /* Ukuran font teks logo */
+    font-weight: bold;                  /* Mencetak tebal teks logo */
+    letter-spacing: 5px;                /* Jarak antar huruf pada logo */
+}
+
+/* Menu Navigasi Tengah */
+.nav-menu {
+    display: flex;                      /* Menyusun menu secara sejajar horizontal */
+    gap: 15px;                          /* Jarak antar tombol menu */
+}
+
+/* Tautan Menu Navigasi */
+.nav-link {
+    color: #6b5c56;                     /* Warna teks menu sebelum di-hover */
+    text-decoration: none;              /* Menghapus garis bawah tautan menu */
+    font-size: 11px;                    /* Ukuran font teks menu */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada menu */
+    font-weight: bold;                  /* Mencetak tebal teks menu */
+    padding: 8px 16px;                  /* Jarak dalam tombol menu */
+    border-radius: 20px;                /* Membuat sudut tombol menu melengkung membulat */
+    display: flex;                      /* Menata ikon dan teks menu sejajar */
+    align-items: center;                /* Menyejajarkan ikon dan teks di tengah vertikal */
+    gap: 6px;                           /* Jarak antara ikon dengan teks menu */
+    transition: 0.3s;                   /* Transisi animasi saat status berubah */
+}
+
+/* Efek Hover & Status Aktif Menu Navigasi */
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;                     /* Warna teks berubah putih saat aktif/ditunjuk */
+    background-color: #2b2320;          /* Warna latar berubah cokelat tua saat aktif/ditunjuk */
+}
+
+/* Wadah Tombol Aksi Kanan Navbar */
+.nav-actions {
+    display: flex;                      /* Menyusun tombol aksi secara horizontal */
+    gap: 8px;                           /* Jarak antar tombol aksi */
+}
+
+/* Tombol Ikon Navbar (Dark Mode, Cart, Profile) */
+.nav-icon {
+    position: relative;                 /* Posisi relatif sebagai patokan lencana angka */
+    width: 40px;                        /* Lebar tombol ikon */
+    height: 40px;                       /* Tinggi tombol ikon */
+    border: 1px solid #eeded5;          /* Garis pinggir tipis tombol ikon */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran sempurna */
+    background-color: #fffdfb;          /* Warna latar belakang tombol ikon krem muda */
+    color: #6b5c56;                     /* Warna ikon di dalam tombol */
+    cursor: pointer;                    /* Kursor berubah bentuk tangan saat ditunjuk */
+    display: flex;                      /* Menata ikon di tengah tombol */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+}
+
+/* Lencana Angka Keranjang Belanja */
+.nav-icon small {
+    position: absolute;                 /* Posisi melayang relatif terhadap tombol ikon */
+    top: -2px;                          /* Geser sedikit ke atas */
+    right: -2px;                        /* Geser sedikit ke kanan */
+    width: 18px;                        /* Lebar lingkaran lencana angka */
+    height: 18px;                       /* Tinggi lingkaran lencana angka */
+    border-radius: 50%;                 /* Membuat lencana berbentuk lingkaran */
+    background-color: #e8a598;          /* Warna latar belakang lencana dusty pink */
+    color: white;                       /* Warna teks angka putih */
+    font-size: 9px;                     /* Ukuran font angka lencana */
+    font-weight: bold;                  /* Mencetak tebal angka lencana */
+    display: flex;                      /* Posisi angka tepat di tengah */
+    align-items: center;                /* Posisi di tengah vertikal */
+    justify-content: center;            /* Posisi di tengah horizontal */
+}
+
+/* Header Seksi Produk & Top Rated */
+.product-header,
+.top-header {
+    padding: 70px 7% 30px;              /* Jarak dalam header seksi */
+    text-align: center;                 /* Rataan teks diatur di tengah */
+    position: relative;                 /* Patokan posisi tombol kembali */
+}
+
+/* Tombol Kembali ke Halaman Sebelumnya */
+.page-back {
+    position: absolute;                 /* Posisi melayang bebas di kiri header */
+    top: 35px;                          /* Jarak dari atas */
+    left: 7%;                           /* Jarak dari kiri */
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: transparent;            /* Latar tombol transparan */
+    color: #6b5c56;                     /* Warna teks tombol kembali */
+    cursor: pointer;                    /* Kursor berbentuk tangan saat ditunjuk */
+    font-size: 11px;                    /* Ukuran font tombol kembali */
+    font-weight: bold;                  /* Mencetak tebal teks tombol kembali */
+}
+
+/* Teks Penanda Kecil di Atas Judul */
+.section-small {
+    font-size: 10px;                    /* Ukuran font teks penanda kecil */
+    letter-spacing: 3px;                /* Jarak antar huruf teks penanda */
+    color: #d67b68;                     /* Warna teks dusty pink pekat */
+    margin-bottom: 10px;                /* Jarak bawah ke judul utama */
+    font-weight: bold;                  /* Mencetak tebal teks penanda */
+}
+
+/* Judul Utama Header Produk & Top Rated */
+.product-header h1,
+.top-header h1 {
+    font-family: Georgia, serif;        /* Jenis font judul header */
+    font-size: 55px;                    /* Ukuran font judul header */
+    font-weight: normal;                /* Berat huruf normal */
+}
+
+/* Cetak Miring pada Judul Header */
+.product-header h1 i,
+.top-header h1 i {
+    color: #e8a598;                     /* Warna teks cetak miring dusty pink */
+}
+
+/* Seksi Filter Kategori */
+.filter-section {
+    padding: 0 7% 35px;                 /* Jarak dalam seksi filter */
+    display: flex;                      /* Flexbox untuk menata tombol filter */
+    flex-wrap: wrap;                    /* Mengizinkan tombol turun ke bawah jika penuh */
+    justify-content: center;            /* Posisi tombol filter di tengah */
+    gap: 10px;                          /* Jarak antar tombol filter */
+}
+
+/* Tombol Filter Kategori Produk */
+.category-filter {
+    padding: 10px 22px;                 /* Jarak dalam tombol filter */
+    border: 1px solid #eeded5;          /* Garis tepi tipis tombol filter */
+    border-radius: 30px;                /* Sudut tombol filter dibuat membulat */
+    background-color: #ffffff;          /* Warna latar belakang tombol filter putih */
+    color: #6b5c56;                     /* Warna teks tombol filter */
+    cursor: pointer;                    /* Kursor bentuk tangan saat ditunjuk */
+    font-size: 10px;                    /* Ukuran font tombol filter */
+    letter-spacing: 1.5px;              /* Jarak antar huruf tombol filter */
+    font-weight: bold;                  /* Mencetak tebal teks tombol filter */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus */
+}
+
+/* Efek Hover & Status Aktif Tombol Filter */
+.category-filter:hover,
+.category-filter.active {
+    background-color: #2b2320;          /* Latar belakang berubah cokelat tua saat aktif */
+    border-color: #2b2320;              /* Garis tepi berubah cokelat tua saat aktif */
+    color: #ffffff;                     /* Warna teks berubah putih saat aktif */
+    box-shadow: 0 4px 15px rgba(43, 35, 32, 0.15); /* Bayangan lembut di bawah tombol filter aktif */
+}
+
+/* Grid Seksi Katalog Produk & Top Rated */
+.product-section,
+.top-product-grid {
+    padding: 10px 7% 90px;              /* Jarak dalam seksi katalog produk */
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: repeat(4, 1fr); /* Membagi tampilan menjadi 4 kolom produk sama lebar */
+    gap: 24px;                          /* Jarak antar kartu produk */
+}
+
+/* Bentuk Utama Kotakan Kartu Produk */
+.product-card {
+    background-color: #ffffff;          /* Warna latar belakang kartu produk putih */
+    border: 1px solid #f0e4dd;          /* Garis tepi tipis warna cokelat muda */
+    border-radius: 20px;                /* Membuat sudut kartu melengkung membulat */
+    overflow: hidden;                   /* Menjaga isi gambar tidak keluar dari sudut membulat */
+    cursor: pointer;                    /* Mengubah kursor jadi bentuk tangan saat ditunjuk */
+    transition: all 0.35s ease;         /* Efek pergerakan halus saat kursor menunjuk kartu */
+}
+
+/* Efek saat Kartu Ditunjuk Mouse (Hover) */
+.product-card:hover {
+    transform: translateY(-8px);        /* Kartu terangkat sedikit ke atas 8px */
+    border-color: #e8a598;              /* Garis tepi berubah warna dusty pink */
+    box-shadow: 0 16px 35px rgba(232, 165, 152, 0.2); /* Muncul bayangan lembut dusty pink */
+}
+
+/* Pembungkus Gambar Produk agar Ukurannya Seragam */
+.product-image {
+    width: 100%;                        /* Lebar gambar memenuhi kartu */
+    height: 290px;                      /* Tinggi gambar dipatok 290px agar semua produk seragam */
+    background-color: #fcf8f5;          /* Warna latar pembungkus gambar */
+    overflow: hidden;                   /* Memotong bagian gambar yang kelebihan */
+}
+
+/* Gambar Produk di Dalam Kartu */
+.product-image img {
+    width: 100%;                        /* Lebar gambar memenuhi wadah */
+    height: 100%;                       /* Tinggi gambar memenuhi wadah */
+    object-fit: cover;                  /* Gambar dipotong rapi tanpa membuat gambarnya gepeng */
+    transition: transform 0.5s ease;     /* Transisi pembesaran gambar yang halus */
+}
+
+/* Gambar Sedikit Membesar saat Kartu Ditunjuk */
+.product-card:hover .product-image img {
+    transform: scale(1.06);             /* Gambar membesar 6% saat kartu di-hover */
+}
+
+/* Area Teks Informasi Produk di Bawah Gambar */
+.product-info {
+    padding: 20px;                      /* Jarak aman antara teks dengan tepi kartu */
+}
+
+/* Teks Kategori Produk */
+.product-category {
+    font-size: 10px;                    /* Ukuran font kategori produk */
+    letter-spacing: 2px;                /* Jarak antar huruf kategori */
+    color: #d67b68;                     /* Warna teks kategori dusty pink pekat */
+    font-weight: bold;                  /* Mencetak tebal teks kategori */
+    text-transform: uppercase;          /* Mengubah teks menjadi huruf kapital semua */
+}
+
+/* Teks Nama Produk */
+.product-name {
+    margin-top: 6px;                   /* Jarak atas nama produk dari kategori */
+    font-family: Georgia, serif;        /* Jenis font klasik nama produk */
+    font-size: 20px;                    /* Ukuran font nama produk */
+    font-weight: normal;                /* Berat huruf normal */
+    color: #2b2320;                     /* Warna teks nama produk cokelat tua */
+    min-height: 48px;                   /* Tinggi minimal area nama agar kartu tetap sejajar */
+}
+
+/* Teks Rating Bintang Produk */
+.product-rating {
+    margin-top: 6px;                   /* Jarak atas rating dari nama produk */
+    color: #e8a598;                     /* Warna bintang dusty pink */
+    font-weight: bold;                  /* Mencetak tebal teks rating */
+    font-size: 13px;                    /* Ukuran font rating */
+}
+
+/* Teks Harga Produk */
+.product-price {
+    margin-top: 10px;                  /* Jarak atas harga dari rating */
+    font-size: 16px;                    /* Ukuran font harga produk */
+    font-weight: bold;                  /* Mencetak tebal teks harga */
+    color: #2b2320;                     /* Warna teks harga cokelat tua */
+}
+
+/* Kelompok Pilihan Ukuran Produk */
+.popup-size-group {
+    margin-top: 18px;                   /* Jarak atas pilihan ukuran dari stok/elemen sebelumnya */
+}
+
+/* Label Petunjuk Pilihan Ukuran */
+.popup-size-group label {
+    display: block;                     /* Mengubah label jadi elemen blok */
+    font-size: 10px;                    /* Ukuran font label ukuran */
+    letter-spacing: 2px;                /* Jarak antar huruf label */
+    color: #8c7a73;                     /* Warna teks label ukuran */
+    font-weight: bold;                  /* Mencetak tebal teks label */
+    margin-bottom: 8px;                 /* Jarak bawah label ke tombol ukuran */
+}
+
+/* Wadah Tombol-Tombol Ukuran */
+.size-options {
+    display: flex;                      /* Menyusun tombol ukuran horizontal */
+    gap: 10px;                          /* Jarak antar tombol ukuran */
+    flex-wrap: wrap;                    /* Mengizinkan tombol turun jika penuh */
+}
+
+/* Tombol Pilihan Ukuran Produk */
+.size-btn {
+    min-width: 40px;                    /* Lebar minimal tombol ukuran */
+    height: 40px;                       /* Tinggi tombol ukuran */
+    padding: 0 12px;                    /* Jarak dalam tombol ukuran */
+    border: 1px solid #eeded5;          /* Garis tepi tipis tombol ukuran */
+    border-radius: 10px;                /* Sudut tombol ukuran melengkung */
+    background-color: #ffffff;          /* Warna latar tombol ukuran putih */
+    color: #6b5c56;                     /* Warna teks tombol ukuran */
+    font-size: 12px;                    /* Ukuran font teks tombol ukuran */
+    font-weight: bold;                  /* Mencetak tebal teks tombol ukuran */
+    cursor: pointer;                    /* Kursor bentuk tangan saat ditunjuk */
+    transition: all 0.25s ease;         /* Transisi pergerakan halus */
+}
+
+/* Efek Hover Tombol Ukuran */
+.size-btn:hover {
+    border-color: #e8a598;              /* Garis tepi berubah dusty pink saat di-hover */
+    color: #e8a598;                     /* Warna teks berubah dusty pink saat di-hover */
+}
+
+/* Status Tombol Ukuran yang Sedang Dipilih */
+.size-btn.active {
+    background-color: #2b2320;          /* Latar belakang berubah cokelat tua saat dipilih */
+    border-color: #2b2320;              /* Garis tepi berubah cokelat tua saat dipilih */
+    color: #ffffff;                     /* Teks berubah putih saat dipilih */
+    box-shadow: 0 4px 12px rgba(43, 35, 32, 0.2); /* Bayangan lembut di bawah tombol terpilih */
+}
+
+/* Ikon Google Material Symbols */
+.material-symbols-outlined {
+    font-size: 18px;                    /* Ukuran font ikon simbol */
+    vertical-align: middle;             /* Menyejajarkan posisi ikon di tengah vertikal teks */
+}
+
+/* Overlay Transparan Pop-up Detail Produk */
+.product-popup {
+    position: fixed;                    /* Menempel permanen di layar monitor */
+    top: 0;                             /* Posisi dari atas */
+    left: 0;                            /* Posisi dari kiri */
+    width: 100vw;                       /* Memenuhi lebar penuh layar */
+    height: 100vh;                      /* Memenuhi tinggi penuh layar */
+    z-index: 500;                       /* Menempatkan pop-up di atas elemen lain */
+    display: none;                      /* Disembunyikan secara bawaan */
+    align-items: center;                /* Menyejajarkan posisi pop-up di tengah vertikal */
+    justify-content: center;            /* Menyejajarkan posisi pop-up di tengah horizontal */
+    padding: 20px;                      /* Jarak dalam overlay */
+    background-color: rgba(43, 35, 32, 0.6); /* Latar belakang cokelat gelap transparan 60% */
+    backdrop-filter: blur(8px);         /* Pemburaman latar di belakang pop-up */
+}
+
+/* Menampilkan Pop-up saat Kelas .show Ditambahkan */
+.product-popup.show {
+    display: flex;                      /* Menampilkan pop-up dengan flexbox saat aktif */
+}
+
+/* Kotak Utama Pop-up Detail Produk */
+.product-popup-box {
+    width: 100%;                        /* Memenuhi lebar maksimal */
+    max-width: 650px;                   /* Lebar batas maksimal pop-up */
+    max-height: 90vh;                   /* Tinggi maksimal pop-up 90% layar */
+    background-color: #ffffff;          /* Latar belakang pop-up putih */
+    border-radius: 20px;                /* Sudut pop-up dibuat membulat */
+    overflow: hidden;                   /* Menjaga elemen dalam tidak meluap */
+    position: relative;                 /* Patokan posisi tombol silang penutup */
+    display: grid;                      /* Menggunakan grid 2 kolom (gambar & informasi) */
+    grid-template-columns: 240px 1fr;   /* Kolom gambar 240px, sisa area untuk informasi */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); /* Bayangan pekat di sekeliling pop-up */
+}
+
+/* Tombol Silang Penutup Pop-up Produk */
+.popup-close {
+    position: absolute;                 /* Posisi melayang bebas di pojok kanan atas */
+    top: 12px;                          /* Jarak dari atas */
+    right: 16px;                        /* Jarak dari kanan */
+    z-index: 10;                        /* Berada di atas gambar dan konten */
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: #fcf8f5;                /* Warna latar belakang tombol silang */
+    width: 32px;                        /* Lebar tombol silang */
+    height: 32px;                       /* Tinggi tombol silang */
+    border-radius: 50%;                 /* Membuat tombol berbentuk lingkaran */
+    font-size: 20px;                    /* Ukuran font silang */
+    color: #6b5c56;                     /* Warna simbol silang */
+    cursor: pointer;                    /* Kursor bentuk tangan saat ditunjuk */
+    display: flex;                      /* Posisi silang di tengah tombol */
+    align-items: center;                /* Tengah vertikal */
+    justify-content: center;            /* Tengah horizontal */
+}
+
+/* Wadah Gambar di Pop-up Produk */
+.product-popup-image {
+    width: 100%;                        /* Lebar wadah gambar memenuhi kolom */
+    height: 100%;                       /* Tinggi wadah gambar memenuhi kolom */
+    min-height: 320px;                  /* Tinggi minimal wadah gambar */
+    background-color: #fcf8f5;          /* Warna latar wadah gambar */
+}
+
+/* Gambar Produk di Dalam Pop-up */
+.product-popup-image img {
+    width: 100%;                        /* Lebar gambar memenuhi wadah */
+    height: 100%;                       /* Tinggi gambar memenuhi wadah */
+    object-fit: cover;                  /* Gambar dipotong rapi tanpa gepeng */
+}
+
+/* Area Konten Informasi Pop-up Produk */
+.product-popup-content {
+    padding: 25px 25px 25px 20px;       /* Jarak dalam area konten informasi */
+    display: flex;                      /* Menyusun teks dan tombol secara vertikal */
+    flex-direction: column;             /* Arah elemen ke bawah */
+    justify-content: space-between;     /* Jarak merata atas-bawah */
+}
+
+/* Teks Kategori Produk di Pop-up */
+.popup-category {
+    font-size: 9px;                     /* Ukuran font kategori */
+    letter-spacing: 2px;                /* Jarak antar huruf kategori */
+    color: #d67b68;                     /* Warna teks dusty pink pekat */
+    font-weight: bold;                  /* Mencetak tebal teks kategori */
+    text-transform: uppercase;          /* Mengubah teks ke huruf kapital */
+}
+
+/* Judul Nama Produk di Pop-up */
+.product-popup-content h2 {
+    font-family: Georgia, serif;        /* Jenis font judul pop-up */
+    font-size: 22px;                    /* Ukuran font judul pop-up */
+    margin-top: 4px;                    /* Jarak atas judul dari kategori */
+    line-height: 1.3;                   /* Rapat baris judul */
+    color: #2b2320;                     /* Warna teks judul cokelat tua */
+}
+
+/* Rating Produk di Pop-up */
+.popup-rating {
+    color: #e8a598;                     /* Warna bintang dusty pink */
+    font-size: 13px;                    /* Ukuran font rating */
+    margin-top: 4px;                    /* Jarak atas rating dari judul */
+}
+
+/* Harga Produk di Pop-up */
+.product-popup-content h3 {
+    font-size: 18px;                    /* Ukuran font harga */
+    margin-top: 8px;                    /* Jarak atas harga dari rating */
+    color: #2b2320;                     /* Warna teks harga cokelat tua */
+    font-weight: bold;                  /* Mencetak tebal teks harga */
+}
+
+/* Teks Deskripsi Produk di Pop-up */
+#popup-description {
+    font-size: 12px;                    /* Ukuran font deskripsi produk */
+    color: #6b5c56;                     /* Warna teks deskripsi */
+    margin-top: 8px;                    /* Jarak atas deskripsi dari harga */
+    line-height: 1.5;                   /* Rapat baris deskripsi */
+}
+
+/* Teks Informasi Stok Produk */
+#popup-stock {
+    font-size: 11px;                    /* Ukuran font teks stok */
+    font-weight: bold;                  /* Mencetak tebal teks stok */
+    color: #8c7a73;                     /* Warna teks stok produk */
+    margin-top: 6px;                    /* Jarak atas stok dari deskripsi */
+}
+
+/* Kelompok Tombol Aksi Pembelian di Pop-up */
+.popup-button-group {
+    display: flex;                      /* Menyusun tombol keranjang & beli sejajar */
+    gap: 10px;                          /* Jarak antar tombol aksi */
+    margin-top: 18px;                   /* Jarak atas tombol aksi dari grup ukuran */
+}
+
+/* Gaya Dasar Tombol Tambah Keranjang & Checkout */
+.add-cart-button,
+.checkout-button {
+    flex: 1;                            /* Membagi 2 tombol sama rata lebar */
+    padding: 12px;                      /* Jarak dalam tombol aksi */
+    border-radius: 25px;                /* Sudut tombol dibuat membulat penuh */
+    font-size: 10px;                    /* Ukuran font tombol aksi */
+    letter-spacing: 1px;                /* Jarak antar huruf pada tombol */
+    font-weight: bold;                  /* Mencetak tebal teks tombol */
+    cursor: pointer;                    /* Kursor bentuk tangan saat ditunjuk */
+    border: none;                       /* Menghapus garis tepi tombol */
+    transition: all 0.3s ease;          /* Transisi pergerakan halus */
+}
+
+/* Tombol Tambah ke Keranjang */
+.add-cart-button {
+    background-color: #fcf8f5;          /* Latar tombol keranjang krem halus */
+    color: #2b2320;                     /* Warna teks tombol keranjang cokelat tua */
+    border: 1px solid #2b2320;          /* Garis tepi tombol keranjang cokelat tua */
+}
+
+/* Efek Hover Tombol Tambah Keranjang */
+.add-cart-button:hover {
+    background-color: #eeded5;          /* Warna latar berubah krem gelap saat di-hover */
+}
+
+/* Tombol Beli Sekarang / Checkout */
+.checkout-button {
+    background-color: #2b2320;          /* Latar tombol checkout cokelat tua */
+    color: #ffffff;                     /* Warna teks tombol checkout putih */
+}
+
+/* Efek Hover Tombol Checkout */
+.checkout-button:hover {
+    background-color: #e8a598;          /* Warna latar berubah dusty pink saat di-hover */
+    box-shadow: 0 4px 12px rgba(232, 165, 152, 0.4); /* Bayangan lembut dusty pink */
+}

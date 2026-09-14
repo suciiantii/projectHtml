@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LÉSCIA | Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+
+    <!-- Header & Navigasi Utama -->
+    <header class="navbar">
+        <a href="index.html" class="nav-logo">LÉSCIA</a>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link active category-pill">
+                <span class="material-symbols-outlined">home</span> HOME
+            </a>
+            <a href="html/all-product.html" class="nav-link">
+                <span class="material-symbols-outlined">grid_view</span> CATEGORY
+            </a>
+            <a href="html/top.html" class="nav-link">
+                <span class="material-symbols-outlined">star</span> TOP RATED
+            </a>
+            <a href="html/about.html" class="nav-link">
+                <span class="material-symbols-outlined">info</span> ABOUT
+            </a>
+        </nav>
+
+        <div class="nav-actions">
+            <button type="button" class="nav-icon" id="dark-mode-toggle" title="Mode Gelap">
+                <span class="material-symbols-outlined">dark_mode</span>
+            </button>
+            <button type="button" class="nav-icon" id="cart-button" title="Keranjang Belanja">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <small id="cart-count">0</small>
+            </button>
+            <button type="button" class="nav-icon" id="profile-button" title="Profil Saya">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <span class="hero-star star-one">✦</span>
+            <span class="hero-star star-two">✧</span>
+            <span class="hero-heart">♡</span>
+
+            <div class="hero-content">
+                <p class="hero-small">WELCOME TO LÉSCIA</p>
+                <h1>Dress your<br><i>own story.</i></h1>
+                <p class="hero-description">
+                    Discover carefully selected pieces made to match your everyday mood, moments, and memories.
+                </p>
+
+                <div class="hero-buttons-wrapper">
+                    <a href="html/all-product.html" class="hero-button">
+                        EXPLORE COLLECTION <span>→</span>
+                    </a>
+                    <a href="html/login.html" class="hero-button btn-outline" id="login-register-btn">
+                        LOGIN / DAFTAR <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-circle"></div>
+                <div class="hero-card">
+                    <div class="hero-card-top">LÉSCIA</div>
+                    <div class="hero-fashion">
+                        <span>✦</span><span>♡</span><span>✦</span>
+                    </div>
+                    <p>YOUR STYLE<br>YOUR STORY</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Section -->
+        <section class="category-preview" id="category">
+            <div class="section-heading">
+                <div>
+                    <p class="section-small">EXPLORE</p>
+                    <h2>Find your <i>favorite.</i></h2>
+                </div>
+                <a href="html/all-product.html" class="view-all">VIEW ALL →</a>
+            </div>
+
+            <div class="category-preview-grid" id="category-grid">
+                <button type="button" class="preview-card" data-category="piyama">
+                    <span>01</span>
+                    <div>
+                        <p>SOFT & COMFY</p>
+                        <h3>Piyama</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="tas">
+                    <span>02</span>
+                    <div>
+                        <p>COMPLETE THE LOOK</p>
+                        <h3>Tas</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="sepatu">
+                    <span>03</span>
+                    <div>
+                        <p>STEP IN STYLE</p>
+                        <h3>Sepatu</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="hoodie">
+                    <span>04</span>
+                    <div>
+                        <p>COZY VIBES</p>
+                        <h3>Hoodie</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="sweater">
+                    <span>05</span>
+                    <div>
+                        <p>WARM & EASY</p>
+                        <h3>Sweater</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="kaos">
+                    <span>06</span>
+                    <div>
+                        <p>EVERYDAY BASIC</p>
+                        <h3>Kaos</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="kebaya">
+                    <span>07</span>
+                    <div>
+                        <p>ELEGANT MOMENT</p>
+                        <h3>Kebaya</h3>
+                    </div><b>→</b>
+                </button>
+                <button type="button" class="preview-card" data-category="kemeja">
+                    <span>08</span>
+                    <div>
+                        <p>CLEAN & CLASSIC</p>
+                        <h3>Kemeja</h3>
+                    </div><b>→</b>
+                </button>
+            </div>
+        </section>
+
+        <!-- Top Picks Preview -->
+        <section class="top-preview">
+            <p class="section-small">LÉSCIA EDIT</p>
+            <h2>Our <i>top picks.</i></h2>
+            <p>Pieces everyone has been loving lately.</p>
+            <a href="html/top.html" class="top-button">VIEW TOP PICKS →</a>
+        </section>
+
+        <!-- About Preview -->
+        <section class="about-preview">
+            <div class="about-decoration">LÉSCIA</div>
+            <div class="about-content">
+                <p class="section-small">ABOUT LÉSCIA</p>
+                <h2>Fashion that feels <i>like you.</i></h2>
+                <p>LÉSCIA hadir untuk menemani kamu menemukan gaya yang terasa seperti diri sendiri.</p>
+                <a href="html/about.html" class="about-button">DISCOVER LÉSCIA →</a>
+            </div>
+        </section>
+    </main>
+
+<!-- Modal Pop-up Profil Pengguna Dinamis & Elegan (UPDATED LENGKAP) -->
+    <div class="profile-popup" id="profile-popup">
+        <div class="profile-box">
+            <button type="button" class="popup-close" id="close-profile" title="Tutup Profil">×</button>
+            
+            <div class="profile-title">
+                <p class="section-small">MY LÉSCIA PROFILE</p>
+                <h2>Hello, <i id="profile-name">User</i> ♡</h2>
+                <p>Informasi akun pendaftaran kamu.</p>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-avatar-box">
+                    <div class="profile-avatar">
+                        <span class="material-symbols-outlined" style="font-size: 60px;">person</span>
+                    </div>
+                    <p class="profile-username" id="profile-username">@username</p>
+                    <span class="profile-badge">✦ VIP MEMBER</span>
+                    
+                    <!-- Tombol Edit Utama -->
+                    <button type="button" class="btn-edit-profile-main" id="btn-edit-profile-main">
+                        ✏️ <span id="teks-edit-profile-main">Edit Profil</span>
+                    </button>
+                </div>
+
+                <div class="profile-information">
+                    <div class="profile-info-grid">
+                        <div class="info-item">
+                            <label><span class="material-symbols-outlined">badge</span> NAMA LENGKAP</label>
+                            <input type="text" class="profile-input" id="profile-fullname" value="-" readonly>
+                        </div>
+                        <div class="info-item">
+                            <label><span class="material-symbols-outlined">mail</span> EMAIL (Terkunci)</label>
+                            <input type="email" class="profile-input input-locked" id="profile-email" value="-" readonly>
+                        </div>
+                        <div class="info-item">
+                            <label><span class="material-symbols-outlined">call</span> NOMOR TELEPON</label>
+                            <input type="number" class="profile-input" id="profile-phone" value="" placeholder="Belum diisi" readonly>
+                        </div>
+                        <div class="info-item">
+                            <label><span class="material-symbols-outlined">cake</span> TANGGAL LAHIR</label>
+                            <input type="date" class="profile-input" id="profile-birthdate" readonly>
+                        </div>
+                        <div class="info-item" style="grid-column: span 2;">
+                            <label><span class="material-symbols-outlined">wc</span> JENIS KELAMIN</label>
+                            <select class="profile-input" id="profile-gender" disabled>
+                                <option value="">Belum dipilih</option>
+                                <option value="Perempuan">Perempuan</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="profile-bio-box">
+                        <label><span class="material-symbols-outlined">history_edu</span> BIO SINGKAT</label>
+                        <textarea class="profile-input" id="profile-bio" placeholder="Tuliskan sedikit tentang style kamu..." maxlength="150" readonly></textarea>
+                    </div>
+
+                    <div class="profile-address-box">
+                        <label><span class="material-symbols-outlined">local_shipping</span> ALAMAT PENGIRIMAN DEFAULT</label>
+                        <textarea class="profile-input" id="profile-address" placeholder="Tuliskan alamat pengiriman kamu secara detail..." readonly></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button type="button" class="logout-button" id="logout-button">
+                    LOG OUT AKUN <span class="material-symbols-outlined" style="margin-left: 5px;">logout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

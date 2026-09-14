@@ -1,0 +1,505 @@
+/* ==========================================================================
+   RESPONSIVE & MODAL PROFIL — LÉSCIA
+   File gabungan untuk mengatur tata letak responsif dan modal profil.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. STYLING DASAR MODAL PROFIL (DESKTOP & GLOBAL)
+   -------------------------------------------------------------------------- */
+
+/* Keyframe animasi pergerakan modal saat terbuka */
+@keyframes modalSlideUp {
+    0% {
+        opacity: 0;                             /* Transparansi 0% saat animasi mulai */
+        transform: translateY(30px) scale(0.96); /* Bergeser ke bawah 30px dan mengecil sedikit */
+    }
+    100% {
+        opacity: 1;                             /* Transparansi 100% saat animasi selesai */
+        transform: translateY(0) scale(1);       /* Kembali ke posisi normal dan ukuran asli */
+    }
+}
+
+/* Latar belakang transparan gelap (Overlay) */
+.profile-popup {
+    position: fixed;                            /* Menempel permanen mengikuti layar layar */
+    top: 0;                                     /* Mematok posisi dari paling atas layar */
+    left: 0;                                    /* Mematok posisi dari paling kiri layar */
+    width: 100vw;                               /* Memenuhi lebar penuh layar monitor/HP */
+    height: 100vh;                              /* Memenuhi tinggi penuh layar monitor/HP */
+    z-index: 9999;                              /* Memastikan modal berada di tumpukan paling atas */
+    display: none;                              /* Disembunyikan secara bawaan */
+    align-items: center;                        /* Posisi kotak modal tepat di tengah vertikal */
+    justify-content: center;                    /* Posisi kotak modal tepat di tengah horizontal */
+    padding: 20px;                              /* Jarak aman dalam overlay modal */
+    background-color: rgba(43, 35, 32, 0.65);   /* Latar belakang hitam kecokelatan transparan 65% */
+    backdrop-filter: blur(8px);                 /* Efek buram pada latar di belakang modal */
+    -webkit-backdrop-filter: blur(8px);         /* Efek buram latar belakang khusus browser Safari */
+}
+
+/* Menampilkan modal saat kelas .show ditambahkan via JavaScript */
+.profile-popup.show {
+    display: flex;                              /* Mengubah tampilan modal jadi flexbox saat aktif */
+}
+
+/* Efek jalannya animasi ketika kelas .show aktif */
+.profile-popup.show .profile-box {
+    animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Menjalankan animasi terangkat saat modal muncul */
+}
+
+/* Kotak pembungkus utama konten modal profil */
+.profile-box {
+    width: 100%;                                /* Lebar kotak modal mengikuti batas maksimal */
+    max-width: 780px;                           /* Lebar batas maksimal modal profil */
+    max-height: 90vh;                           /* Tinggi maksimal modal 90% dari tinggi layar */
+    overflow-y: auto;                           /* Memunculkan scrollbar jika konten terlalu panjang */
+    padding: 35px;                              /* Jarak aman di dalam modal */
+    border-radius: 24px;                        /* Membuat sudut kotak modal melengkung halus */
+    background-color: #fffdfb;                  /* Warna latar belakang modal krem muda */
+    position: relative;                         /* Patokan posisi untuk tombol silang penutup */
+    box-shadow: 0 25px 60px rgba(43, 35, 32, 0.25); /* Bayangan lembut di sekeliling modal */
+    border: 1px solid #f0e4dd;                  /* Garis tepi tipis warna cokelat muda */
+}
+
+/* Custom scrollbar internal untuk kotak modal */
+.profile-box::-webkit-scrollbar {
+    width: 6px;                                 /* Lebar batang scrollbar internal */
+}
+.profile-box::-webkit-scrollbar-thumb {
+    background-color: #ded2cb;                  /* Warna pegangan scrollbar krem lembut */
+    border-radius: 10px;                        /* Membuat sudut pegangan scrollbar membulat */
+}
+
+/* Tombol silang untuk menutup modal */
+.popup-close {
+    position: absolute;                         /* Posisi melayang bebas di dalam kotak modal */
+    top: 20px;                                  /* Jarak dari atas kotak modal */
+    right: 20px;                                /* Jarak dari kanan kotak modal */
+    border: none;                               /* Menghapus garis tepi tombol */
+    background: #f8f2ed;                        /* Warna latar belakang tombol silang */
+    width: 36px;                                /* Lebar tombol silang */
+    height: 36px;                               /* Tinggi tombol silang */
+    border-radius: 50%;                         /* Membuat bentuk tombol silang jadi lingkaran sempurna */
+    font-size: 22px;                            /* Ukuran font ikon silang */
+    color: #806d63;                             /* Warna simbol silang */
+    cursor: pointer;                            /* Mengubah kursor jadi bentuk tangan saat ditunjuk */
+    display: flex;                              /* Mengatur posisi ikon silang di tengah tombol */
+    align-items: center;                        /* Posisi silang di tengah vertikal */
+    justify-content: center;                    /* Posisi silang di tengah horizontal */
+    transition: all 0.25s ease;                  /* Animasi pergerakan halus saat tombol di-hover */
+    z-index: 10;                                /* Memastikan tombol silang berada di atas elemen lain */
+}
+
+.popup-close:hover {
+    background-color: #b98378;                  /* Warna latar tombol berubah dusty pink saat di-hover */
+    color: #ffffff;                             /* Warna simbol silang berubah putih saat di-hover */
+    transform: rotate(90deg);                   /* Memutar tombol silang 90 derajat saat di-hover */
+}
+
+/* Header bagian judul modal profil */
+.profile-title {
+    margin-bottom: 25px;                        /* Jarak bawah header modal profil */
+}
+
+.profile-title h2 {
+    font-family: Georgia, serif;                /* Jenis font judul modal profil */
+    font-size: 34px;                            /* Ukuran font judul modal */
+    font-weight: normal;                        /* Berat huruf judul normal */
+    color: #302a27;                             /* Warna teks judul modal */
+    margin-top: 4px;                            /* Jarak atas judul modal */
+}
+
+.profile-title h2 i {
+    color: #b98378;                             /* Warna simbol cetak miring di judul dusty pink */
+}
+
+.profile-title p {
+    color: #8d817a;                             /* Warna teks deskripsi subjudul modal */
+    font-size: 13px;                            /* Ukuran font subjudul modal */
+    margin-top: 4px;                            /* Jarak atas teks subjudul */
+}
+
+/* Grid tata letak utama (2 Kolom: Kiri Avatar, Kanan Data Informasi) */
+.profile-content {
+    display: grid;                              /* Menggunakan sistem tata letak CSS Grid */
+    grid-template-columns: 210px 1fr;           /* Kolom kiri fixed 210px, kolom kanan mengisi sisa area */
+    gap: 30px;                                  /* Jarak antara kolom avatar dan kolom data */
+    align-items: start;                         /* Menyejajarkan posisi elemen di paling atas */
+}
+
+/* Wadah bagian avatar di kolom kiri */
+.profile-avatar-box {
+    display: flex;                              /* Flexbox untuk menyusun elemen secara vertikal */
+    flex-direction: column;                     /* Menyusun avatar, username, dan tombol ke bawah */
+    align-items: center;                        /* Posisi seluruh elemen avatar di tengah horizontal */
+    text-align: center;                         /* Rataan teks avatar di tengah */
+    background-color: #fcf8f5;                  /* Warna latar belakang wadah avatar */
+    padding: 24px 16px;                         /* Jarak dalam wadah avatar */
+    border-radius: 18px;                        /* Membuat sudut wadah avatar melengkung */
+    border: 1px solid #e4d8d0;                  /* Garis tepi tipis wadah avatar */
+}
+
+/* Lingkaran foto avatar */
+.profile-avatar {
+    width: 95px;                                /* Lebar lingkaran avatar */
+    height: 95px;                               /* Tinggi lingkaran avatar */
+    border-radius: 50%;                         /* Membuat bentuk avatar menjadi lingkaran sempurna */
+    background-color: #ead8d1;                  /* Warna latar belakang lingkaran avatar */
+    display: flex;                              /* Flexbox untuk menempatkan ikon di tengah */
+    align-items: center;                        /* Posisi ikon di tengah vertikal */
+    justify-content: center;                    /* Posisi ikon di tengah horizontal */
+    color: #806d63;                             /* Warna ikon avatar */
+    margin-bottom: 12px;                        /* Jarak bawah avatar ke username */
+    border: 3px solid #fffdfb;                  /* Garis pinggir putih di sekeliling avatar */
+    box-shadow: 0 6px 15px rgba(234, 216, 209, 0.6); /* Bayangan lembut di belakang avatar */
+}
+
+.profile-username {
+    font-weight: bold;                          /* Mencetak tebal teks username */
+    color: #302a27;                             /* Warna teks username */
+    font-size: 14px;                            /* Ukuran font username */
+    margin-bottom: 10px;                        /* Jarak bawah username ke badge VIP */
+    word-break: break-all;                      /* Pemotong teks jika nama terlalu panjang */
+}
+
+/* Lencana status VIP Member */
+.profile-badge {
+    font-size: 9px;                             /* Ukuran font lencana status */
+    letter-spacing: 1.5px;                      /* Jarak antar huruf pada lencana */
+    font-weight: bold;                          /* Mencetak tebal teks lencana */
+    background: linear-gradient(135deg, #c59b92, #b98378); /* Warna gradasi dusty pink untuk lencana */
+    color: #ffffff;                             /* Warna teks lencana putih */
+    padding: 5px 12px;                          /* Jarak dalam lencana status */
+    border-radius: 20px;                        /* Sudut lencana dibuat membulat */
+}
+
+/* Tombol Edit Profil Utama */
+.btn-edit-profile-main {
+    margin-top: 15px;                           /* Jarak atas dari lencana ke tombol edit */
+    border: 1px solid #ded2cb;                  /* Garis tepi tombol edit */
+    background-color: #ffffff;                  /* Warna latar belakang tombol edit */
+    padding: 8px 16px;                          /* Jarak dalam tombol edit */
+    border-radius: 20px;                        /* Sudut tombol edit membulat */
+    color: #b98378;                             /* Warna teks tombol edit dusty pink */
+    font-size: 11px;                            /* Ukuran font tombol edit */
+    font-weight: bold;                          /* Mencetak tebal teks tombol edit */
+    cursor: pointer;                            /* Kursor berubah bentuk tangan saat ditunjuk */
+    transition: all 0.25s ease;                  /* Transisi warna halus saat tombol di-hover */
+    width: 100%;                                /* Lebar tombol edit memenuhi wadah avatar */
+}
+
+.btn-edit-profile-main:hover {
+    background-color: #b98378;                  /* Latar tombol berubah dusty pink saat di-hover */
+    color: #ffffff;                             /* Teks tombol berubah putih saat di-hover */
+    border-color: #b98378;                      /* Garis tepi tombol berubah dusty pink saat di-hover */
+}
+
+/* Wadah informasi form di kolom kanan */
+.profile-information {
+    display: flex;                              /* Menyusun baris-baris form secara vertikal */
+    flex-direction: column;                     /* Mengatur arah flexbox ke bawah */
+    gap: 15px;                                  /* Jarak antar kelompok input form */
+}
+
+/* Grid input 2 kolom untuk data identitas */
+.profile-info-grid {
+    display: grid;                              /* Menggunakan sistem grid */
+    grid-template-columns: repeat(2, 1fr);      /* Membagi form data menjadi 2 kolom sama lebar */
+    gap: 12px;                                  /* Jarak antar kotak input data */
+}
+
+.info-item {
+    background-color: #fcf8f5;                  /* Warna latar belakang kotak isian info */
+    padding: 12px 14px;                         /* Jarak dalam kotak isian info */
+    border-radius: 12px;                        /* Sudut kotak info dibuat melengkung */
+    border: 1px solid #e4d8d0;                  /* Garis tepi tipis kotak isian info */
+}
+
+.profile-information label {
+    display: flex;                              /* Flexbox untuk merapikan ikon dan teks label */
+    align-items: center;                        /* Menyejajarkan ikon dan teks label di tengah */
+    font-size: 9px;                             /* Ukuran font label isian */
+    letter-spacing: 1.5px;                      /* Jarak antar huruf pada label */
+    color: #9a8d85;                             /* Warna teks label isian */
+    font-weight: bold;                          /* Teks label dicetak tebal */
+    margin-bottom: 4px;                         /* Jarak bawah label ke kolom input */
+}
+
+/* Gaya dasar input dalam modal profil */
+.profile-input {
+    width: 100%;                                /* Lebar kolom input memenuhi kotak isian */
+    border: 1px solid transparent;              /* Garis tepi transparan saat mode biasa */
+    background-color: transparent;              /* Latar transparan menyatu dengan kotak */
+    font-size: 13px;                            /* Ukuran font teks input */
+    color: #302a27;                             /* Warna teks isian input */
+    font-weight: 600;                           /* Ketebalan huruf isian input */
+    font-family: inherit;                       /* Menggunakan jenis font turunan dari body */
+    padding: 4px 0;                             /* Jarak dalam atas-bawah input */
+    outline: none;                              /* Menghapus garis biru bawaan browser saat diklik */
+    transition: all 0.25s ease;                  /* Perubahan halus saat status input berubah */
+}
+
+/* Gaya input saat mode edit aktif */
+.profile-input:not([readonly]):not(:disabled) {
+    background-color: #ffffff;                  /* Latar input berubah putih saat diedit */
+    border: 1px solid #b98378;                  /* Garis tepi berubah dusty pink saat diedit */
+    border-radius: 6px;                         /* Sudut kotak input melengkung saat diedit */
+    padding: 6px 10px;                          /* Jarak dalam input saat mode edit aktif */
+}
+
+select.profile-input:disabled {
+    appearance: none;                           /* Menghapus tanda panah dropdown bawaan browser saat mati */
+    -webkit-appearance: none;                   /* Menghapus panah bawaan di browser Safari/Chrome */
+}
+
+select.profile-input:not(:disabled) {
+    appearance: auto;                           /* Menampilkan kembali panah dropdown saat aktif */
+    -webkit-appearance: auto;                   /* Menampilkan panah di browser Safari/Chrome */
+}
+
+/* Gaya input email yang terkunci permanen */
+.profile-input.input-locked {
+    color: #9a8d85;                             /* Warna teks input terkunci dibuat lebih pudar */
+    cursor: not-allowed;                        /* Kursor berubah bentuk tanda dilarang saat diarahkan */
+}
+
+/* Kotak Bio & Alamat Pengiriman */
+.profile-bio-box,
+.profile-address-box {
+    background-color: #fcf8f5;                  /* Latar belakang kotak bio dan alamat */
+    padding: 14px;                              /* Jarak dalam kotak bio dan alamat */
+    border-radius: 12px;                        /* Sudut kotak bio dan alamat melengkung */
+    border: 1px solid #e4d8d0;                  /* Garis tepi tipis kotak bio dan alamat */
+}
+
+.profile-bio-box textarea,
+.profile-address-box textarea {
+    width: 100%;                                /* Lebar textarea memenuhi kotak */
+    border: 1px solid transparent;              /* Garis tepi transparan saat mode biasa */
+    background-color: transparent;              /* Latar transparan saat mode biasa */
+    font-family: inherit;                       /* Menggunakan font turunan */
+    font-size: 13px;                            /* Ukuran teks di textarea */
+    color: #302a27;                             /* Warna teks isian textarea */
+    resize: none;                               /* Mencegah pengguna mengubah ukuran kotak manual */
+    outline: none;                              /* Menghapus outline saat diklik */
+}
+
+.profile-bio-box textarea { min-height: 50px; } /* Tinggi minimal kotak textarea bio */
+.profile-address-box textarea { min-height: 70px; } /* Tinggi minimal kotak textarea alamat */
+
+.profile-bio-box textarea:not([readonly]),
+.profile-address-box textarea:not([readonly]) {
+    background-color: #ffffff;                  /* Latar textarea berubah putih saat mode edit */
+    border: 1px solid #b98378;                  /* Garis tepi textarea berubah dusty pink */
+    border-radius: 6px;                         /* Sudut textarea membulat saat diedit */
+    padding: 8px;                               /* Jarak dalam textarea saat diedit */
+}
+
+/* Tombol Log Out di bagian paling bawah modal */
+.profile-actions {
+    margin-top: 25px;                           /* Jarak atas dari form ke tombol logout */
+    display: flex;                              /* Flexbox untuk perataan tombol */
+    justify-content: flex-end;                  /* Posisi tombol logout diatur paling kanan */
+}
+
+.logout-button {
+    padding: 12px 24px;                         /* Jarak dalam tombol logout */
+    border: none;                               /* Menghapus garis tepi tombol */
+    border-radius: 25px;                        /* Sudut tombol logout membulat penuh */
+    background-color: #302a27;                  /* Warna latar tombol logout cokelat gelap */
+    color: #ffffff;                             /* Warna teks tombol logout putih */
+    cursor: pointer;                            /* Kursor bentuk tangan saat ditunjuk */
+    font-size: 10px;                            /* Ukuran font teks logout */
+    letter-spacing: 1.5px;                      /* Jarak antar huruf teks logout */
+    font-weight: bold;                          /* Teks logout dicetak tebal */
+    transition: all 0.25s ease;                  /* Efek transisi halus saat di-hover */
+    display: inline-flex;                       /* Menata ikon dan teks logout segaris */
+    align-items: center;                        /* Posisi di tengah vertikal */
+}
+
+.logout-button:hover {
+    background-color: #e56b6b;                  /* Latar tombol berubah merah soft saat di-hover */
+    box-shadow: 0 4px 12px rgba(229, 107, 107, 0.3); /* Bayangan merah lembut saat di-hover */
+}
+
+
+/* --------------------------------------------------------------------------
+   2. DESKTOP SEDANG & LAPTOP (Maks 1024px)
+   -------------------------------------------------------------------------- */
+/* ==========================================
+   TABLET & HP BESAR (Maks 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Navbar Rapih di HP */
+    .navbar,
+    .about-navbar,
+    .bilah-navigasi {
+        padding: 12px 4%;                       /* Menyesuaikan jarak dalam navbar di tablet/HP */
+        flex-direction: column;                 /* Mengubah susunan navbar menjadi menurun ke bawah */
+        align-items: center;                    /* Posisi elemen navbar di tengah horizontal */
+        gap: 10px;                              /* Jarak antar baris elemen di navbar */
+    }
+
+    .nav-menu {
+        display: flex;                          /* Menyusun menu navigasi fleksibel */
+        flex-wrap: wrap;                        /* Mengizinkan menu turun ke bawah jika layar sempit */
+        justify-content: center;                /* Posisi menu tepat di tengah */
+        gap: 6px;                               /* Jarak antar item menu */
+        width: 100%;                            /* Lebar menu memenuhi area */
+    }
+
+    .nav-link {
+        font-size: 9px;                         /* Ukuran teks menu diperkecil untuk HP */
+        padding: 6px 10px;                      /* Jarak dalam tombol menu diperkecil */
+        letter-spacing: 1px;                    /* Jarak antar huruf disesuaikan */
+    }
+
+    .nav-actions {
+        display: flex;                          /* Menyusun tombol aksi horizontal */
+        justify-content: center;                /* Posisi tombol aksi di tengah */
+        gap: 10px;                              /* Jarak antar tombol aksi */
+    }
+
+    /* Seksi Hero */
+    .hero {
+        flex-direction: column;                 /* Menyusun seksi hero menurun vertikal di HP */
+        padding: 40px 5%;                       /* Jarak dalam seksi hero disesuaikan */
+        text-align: center;                     /* Rataan teks hero diubah ke tengah */
+        gap: 20px;                              /* Jarak antar konten teks dan visual */
+    }
+
+    .hero-content {
+        max-width: 100%;                        /* Lebar konten hero memenuhi layar HP */
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 8vw, 55px);      /* Ukuran judul fleksibel menyesuaikan lebar layar HP */
+    }
+
+    /* Seksi About Preview di Home (Ubah 2 Kolom jadi 1 Kolom) */
+    .about-preview {
+        grid-template-columns: 1fr !important;  /* Mengubah tata letak seksi about jadi 1 kolom */
+        gap: 20px !important;                   /* Jarak antar elemen seksi about */
+        padding: 50px 5% !important;            /* Jarak dalam seksi about */
+        text-align: center;                     /* Teks seksi about rata tengah */
+    }
+
+    .about-decoration {
+        font-size: 50px !important;             /* Ukuran teks dekorasi raksasa diperkecil di HP */
+        text-align: center;                     /* Posisi teks dekorasi di tengah */
+    }
+
+    .about-content {
+        max-width: 100% !important;             /* Lebar isi seksi about memenuhi area */
+    }
+
+    .about-content h2 {
+        font-size: 32px !important;             /* Ukuran font judul seksi about diperkecil */
+    }
+
+    /* Seksi Top Preview */
+    .top-preview h2 {
+        font-size: 36px;                        /* Ukuran judul seksi top preview disesuaikan */
+    }
+
+    /* Grid Produk */
+    .product-section,
+    .top-product-grid,
+    .category-preview-grid {
+        grid-template-columns: repeat(2, 1fr);  /* Mengubah tampilan grid produk jadi 2 kolom di HP */
+        padding: 20px 4% 50px;                  /* Jarak dalam seksi produk */
+        gap: 12px;                              /* Jarak antar kartu produk diperkecil */
+    }
+}
+
+/* ==========================================
+   HP / MOBILE LAYAR KECIL (Maks 480px)
+   ========================================== */
+@media screen and (max-width: 480px) {
+    /* Header Navbar HP Kecil */
+    .nav-logo {
+        font-size: 18px;                        /* Ukuran logo diperkecil untuk layar kecil */
+        letter-spacing: 3px;                    /* Jarak antar huruf logo */
+    }
+
+    .nav-link {
+        font-size: 8.5px;                       /* Ukuran font menu diperkecil lagi */
+        padding: 5px 8px;                       /* Jarak dalam menu diperkecil */
+    }
+
+    .nav-icon {
+        width: 32px;                            /* Lebar tombol ikon diperkecil */
+        height: 32px;                           /* Tinggi tombol ikon diperkecil */
+    }
+
+    /* Judul Halaman agar tidak kepotong */
+    .product-header h1,
+    .top-header h1,
+    .cart-header h1,
+    .about-hero h1,
+    .section-heading h2 {
+        font-size: 28px !important;             /* Ukuran seluruh judul utama dipatok 28px agar pas di layar HP */
+    }
+
+    /* Grid Produk 1 Kolom di HP Kecil */
+    .product-section,
+    .top-product-grid {
+        grid-template-columns: 1fr;             /* Mengubah susunan kartu produk menjadi 1 kolom penuh */
+    }
+
+    .product-image {
+        height: 240px;                          /* Tinggi batas foto produk disesuaikan untuk HP kecil */
+    }
+}
+
+/* ==========================================================================
+   TATA LETAK RESPONSIF KHUSUS HALAMAN LOGIN & REGISTER
+   ========================================================================== */
+
+/* Perubahan Tampilan untuk Layar Tablet / Layar Sedang (Maks 800px) */
+@media (max-width: 800px) {
+    /* Mengubah Layout Utama 2 Kolom Menjadi 1 Kolom Vertikal */
+    .login-page {
+        grid-template-columns: 1fr;     /* Mengubah layout menjadi 1 kolom penuh diatur ke bawah */
+    }
+
+    /* Penyesuaian Wadah Video Background di Tablet */
+    .gambar {
+        min-height: 380px;              /* Tinggi minimal wadah video diperkecil */
+        padding: 40px 30px;             /* Menyesuaikan jarak dalam wadah video */
+    }
+
+    /* Penyesuaian Tinggi Konten Teks di Atas Video */
+    .isi-gambar {
+        min-height: 300px;              /* Tinggi minimal konten teks video diperkecil */
+    }
+
+    /* Penyesuaian Seksi Form di Tablet */
+    .form-section {
+        min-height: auto;               /* Tinggi minimal disesuaikan dengan isi form */
+        padding: 40px 30px;             /* Menyesuaikan jarak dalam seksi form */
+    }
+}
+
+/* Perubahan Tampilan untuk HP / Layar Kecil (Maks 480px) */
+@media (max-width: 480px) {
+    /* Penyesuaian Wadah Video di HP Kecil */
+    .gambar {
+        min-height: 320px;              /* Tinggi minimal wadah video diperkecil lagi */
+        padding: 25px 20px;             /* Jarak dalam wadah video disesuaikan */
+    }
+
+    /* Ukuran Teks Logo di HP Kecil */
+    .logo span {
+        font-size: 38px;                /* Ukuran font teks logo dipatok 38px */
+    }
+
+    /* Ukuran Judul Pembuka di HP Kecil */
+    .teks-gambar h1 {
+        font-size: 38px;                /* Ukuran font judul pembuka dipatok 38px */
+    }
+
+    /* Penyesuaian Jarak Dalam Form di HP Kecil */
+    .form-section {
+        padding: 30px 20px;             /* Jarak dalam seksi form disesuaikan */
+    }
+}

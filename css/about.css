@@ -1,0 +1,368 @@
+/* Reset CSS untuk menyamakan tampilan di semua browser */
+* {
+    margin: 0;                          /* Menghapus jarak luar bawaan browser */
+    padding: 0;                         /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box;             /* Memastikan ukuran elemen dihitung termasuk padding & border */
+}
+
+/* Gaya dasar untuk elemen body halaman About */
+body {
+    font-family: Arial, sans-serif;     /* Jenis font utama halaman */
+    background-color: #f8f2ed;          /* Warna latar belakang utama krem lembut */
+    color: #302a27;                     /* Warna teks utama cokelat tua */
+}
+
+/* Navigasi Atas Khusus Halaman About */
+.about-navbar {
+    min-height: 75px;                   /* Tinggi minimal bilah navigasi */
+    padding: 18px 7%;                   /* Jarak dalam navigasi (atas-bawah 18px, kiri-kanan 7%) */
+
+    background-color: #fffdfb;          /* Warna latar belakang navigasi krem muda */
+    border-bottom: 1px solid #eee3dc;   /* Garis pembatas tipis di bagian bawah navigasi */
+
+    display: flex;                      /* Menggunakan flexbox untuk tata letak sejajar */
+    align-items: center;                /* Menyejajarkan posisi elemen secara vertikal di tengah */
+    justify-content: space-between;     /* Memberi jarak merata di antara logo dan tombol aksi */
+}
+
+/* Teks Logo LÉSCIA di Navigasi About */
+.about-logo {
+    color: #302a27;                     /* Warna teks logo cokelat tua */
+    text-decoration: none;              /* Menghapus garis bawah tautan logo */
+
+    font-size: 22px;                    /* Ukuran font teks logo */
+    font-weight: bold;                  /* Mencetak tebal teks logo */
+    letter-spacing: 5px;                /* Jarak antar huruf pada logo */
+}
+
+/* Tombol Kembali ke Halaman Sebelumnya */
+.page-back {
+    border: none;                       /* Menghapus garis tepi tombol */
+    background: transparent;            /* Latar belakang tombol dibuat transparan */
+
+    cursor: pointer;                    /* Mengubah kursor jadi bentuk tangan saat ditunjuk */
+    color: #625650;                     /* Warna ikon/teks tombol kembali */
+}
+
+/* Wadah Tombol Aksi Kanan Navigasi About */
+.about-nav-actions {
+    display: flex;                      /* Menyusun tombol aksi secara horizontal */
+    align-items: center;                /* Menyejajarkan posisi tombol di tengah vertikal */
+    gap: 12px;                          /* Jarak antar tombol aksi */
+}
+
+/* Tombol Ikon Navigasi (Dark Mode / Profile) */
+.nav-icon {
+    width: 40px;                        /* Lebar tombol ikon */
+    height: 40px;                       /* Tinggi tombol ikon */
+    border: 1px solid #eeded5;          /* Garis pinggir tipis tombol ikon */
+    border-radius: 50%;                 /* Membuat bentuk tombol menjadi lingkaran sempurna */
+    background-color: #fffdfb;          /* Warna latar belakang tombol ikon */
+    color: #6b5c56;                     /* Warna ikon di dalam tombol */
+    cursor: pointer;                    /* Mengubah kursor jadi bentuk tangan saat ditunjuk */
+    display: flex;                      /* Flexbox untuk menata ikon di tengah */
+    align-items: center;                /* Menyejajarkan ikon di tengah vertikal */
+    justify-content: center;            /* Menyejajarkan ikon di tengah horizontal */
+}
+
+/* Seksi Hero Utama Halaman About */
+.about-hero {
+    min-height: 600px;                  /* Tinggi minimal seksi hero */
+
+    padding: 120px 10%;                 /* Jarak dalam seksi hero (atas-bawah 120px, kiri-kanan 10%) */
+
+    text-align: center;                 /* Rataan teks diatur di tengah */
+
+    background-color: #ead8d1;          /* Warna latar belakang seksi hero krem merah muda */
+
+    display: flex;                      /* Flexbox untuk menyusun konten secara vertikal */
+    flex-direction: column;             /* Mengatur arah susunan elemen ke bawah */
+    justify-content: center;            /* Posisi konten tepat di tengah vertikal */
+    align-items: center;                /* Posisi konten tepat di tengah horizontal */
+}
+
+/* Teks Penanda Kecil di Atas Judul */
+.section-small {
+    font-size: 10px;                    /* Ukuran font teks penanda kecil */
+    letter-spacing: 3px;                /* Jarak antar huruf pada teks penanda */
+    color: #9a8d85;                     /* Warna teks penanda pudar */
+}
+
+/* Judul Utama di Seksi Hero About */
+.about-hero h1 {
+    margin-top: 15px;                   /* Jarak atas judul dari teks penanda */
+
+    font-family: Georgia, serif;        /* Jenis font klasik untuk judul hero */
+    font-size: clamp(50px, 7vw, 85px);  /* Ukuran font responsif menyesuaikan lebar layar */
+    font-weight: normal;                /* Berat huruf judul normal */
+    line-height: 1;                     /* Rapat baris judul */
+}
+
+/* Cetak Miring pada Judul Hero */
+.about-hero h1 i {
+    color: #806d63;                     /* Warna teks cetak miring cokelat lembut */
+}
+
+/* Paragraf Deskripsi di Bawah Judul Hero */
+.about-hero > p:last-child {
+    max-width: 650px;                   /* Lebar maksimal paragraf deskripsi */
+
+    margin-top: 30px;                   /* Jarak atas paragraf dari judul */
+
+    color: #756861;                     /* Warna teks deskripsi */
+    line-height: 1.8;                   /* Jarak antar baris kalimat */
+}
+
+/* Seksi Bagian Cerita (Story) */
+.about-story {
+    padding: 100px 8%;                  /* Jarak dalam seksi cerita */
+
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: 1.5fr 1fr;   /* Membagi 2 kolom (kolom 1 lebih lebar dibanding kolom 2) */
+
+    gap: 25px;                          /* Jarak antar kartu cerita */
+}
+
+/* Kartu Utama Bagian Cerita */
+.story-card {
+    padding: 50px;                      /* Jarak dalam kartu cerita */
+
+    background-color: #fffdfb;          /* Warna latar belakang kartu putih krem */
+
+    border-radius: 25px;                /* Membuat sudut kartu melengkung membulat */
+}
+
+/* Kartu Cerita Kedua */
+.story-card.second {
+    background-color: #f0e3dc;          /* Warna latar belakang kartu kedua cokelat krem muda */
+
+    display: flex;                      /* Flexbox untuk menyusun isi kartu vertikal */
+    flex-direction: column;             /* Arah susunan elemen ke bawah */
+    justify-content: center;            /* Posisi isi kartu tepat di tengah vertikal */
+}
+
+/* Ikon/Kutipan di Dalam Kartu Cerita */
+.story-card > span {
+    font-size: 35px;                    /* Ukuran font simbol/ikon */
+    color: #b98378;                     /* Warna simbol dusty pink */
+}
+
+/* Judul di Dalam Kartu Cerita */
+.story-card h2 {
+    margin-top: 20px;                   /* Jarak atas judul dari ikon */
+
+    font-family: Georgia, serif;        /* Jenis font judul cerita */
+    font-size: 38px;                    /* Ukuran font judul cerita */
+    font-weight: normal;                /* Berat huruf judul normal */
+}
+
+/* Paragraf Teks Cerita */
+.story-card p {
+    margin-top: 20px;                   /* Jarak atas paragraf dari judul */
+
+    color: #8d817a;                     /* Warna teks paragraf cerita */
+    line-height: 1.8;                   /* Jarak antar baris kalimat */
+}
+
+/* Seksi Informasi Pemilik (Owner) */
+.owner-section {
+    padding: 100px 10%;                 /* Jarak dalam seksi pemilik */
+
+    background-color: #fffdfb;          /* Warna latar belakang seksi pemilik */
+
+    display: grid;                      /* Menggunakan sistem CSS Grid */
+    grid-template-columns: 1fr 1fr;      /* Membagi menjadi 2 kolom sama lebar */
+
+    gap: 80px;                          /* Jarak antara foto dan teks pemilik */
+
+    align-items: center;                /* Posisi elemen di tengah vertikal */
+}
+
+/* Wadah Foto Pemilik */
+.owner-photo {
+    position: relative;                 /* Patokan posisi untuk placeholder foto */
+
+    width: 100%;                        /* Lebar wadah foto memenuhi kolom */
+    aspect-ratio: 4 / 5;                /* Rasio perbandingan foto 4:5 */
+    min-height: 500px;                  /* Tinggi minimal wadah foto */
+
+    border-radius: 30px;                /* Sudut wadah foto membulat */
+
+    background-color: #ead8d1;          /* Warna latar belakang wadah foto */
+
+    overflow: hidden;                   /* Mencegah gambar keluar dari sudut membulat */
+}
+
+/* Gambar Foto Pemilik */
+.owner-photo-img {
+    display: block;                     /* Mengubah gambar jadi elemen blok */
+
+    width: 100%;                        /* Lebar gambar memenuhi wadah */
+    height: 100%;                       /* Tinggi gambar memenuhi wadah */
+
+    object-fit: cover;                  /* Gambar dipotong rapi tanpa gepeng */
+    object-position: center;            /* Fokus gambar tepat di tengah */
+}
+
+/* Wadah Placeholder saat Foto Belum Dimuat */
+.photo-placeholder {
+    position: absolute;                 /* Posisi menumpuk menutupi foto */
+    top: 0;                             /* Posisi dari atas */
+    left: 0;                            /* Posisi dari kiri */
+
+    width: 100%;                        /* Lebar memenuhi wadah foto */
+    height: 100%;                       /* Tinggi memenuhi wadah foto */
+
+    display: none;                      /* Disembunyikan secara bawaan */
+    flex-direction: column;             /* Susunan teks placeholder ke bawah */
+    justify-content: center;            /* Posisi di tengah vertikal */
+    align-items: center;                /* Posisi di tengah horizontal */
+
+    color: #806d63;                     /* Warna ikon dan teks placeholder */
+}
+
+/* Ikon di Placeholder Foto */
+.photo-placeholder span {
+    font-size: 80px;                    /* Ukuran font ikon placeholder */
+}
+
+/* Teks Petunjuk di Placeholder Foto */
+.photo-placeholder p {
+    margin-top: 15px;                   /* Jarak atas teks dari ikon */
+    font-size: 12px;                    /* Ukuran font teks petunjuk */
+    letter-spacing: 2px;                /* Jarak antar huruf teks petunjuk */
+}
+
+/* Wadah Teks Informasi Pemilik */
+.owner-text {
+    max-width: 550px;                   /* Lebar maksimal wadah teks pemilik */
+}
+
+/* Judul Teks Pemilik */
+.owner-text h2 {
+    margin-top: 15px;                   /* Jarak atas judul dari penanda kecil */
+
+    font-family: Georgia, serif;        /* Jenis font judul pemilik */
+    font-size: 48px;                    /* Ukuran font judul pemilik */
+    font-weight: normal;                /* Berat huruf normal */
+    line-height: 1.1;                   /* Rapat baris judul */
+}
+
+/* Paragraf Deskripsi Pemilik */
+.owner-text > p:not(.section-small):not(.owner-signature) {
+    margin-top: 20px;                   /* Jarak atas paragraf dari judul */
+
+    color: #8d817a;                     /* Warna teks deskripsi pemilik */
+    line-height: 1.8;                   /* Jarak antar baris kalimat */
+}
+
+/* Teks Tanda Tangan Pemilik */
+.owner-signature {
+    margin-top: 30px;                   /* Jarak atas tanda tangan dari paragraf */
+
+    font-family: Georgia, serif;        /* Jenis font klasik tanda tangan */
+    font-size: 20px;                    /* Ukuran font tanda tangan */
+    color: #806d63;                     /* Warna teks tanda tangan */
+}
+
+/* Seksi Penutup Halaman About (Call to Action) */
+.about-ending {
+    padding: 120px 20px;                /* Jarak dalam seksi penutup */
+
+    text-align: center;                 /* Rataan teks diatur di tengah */
+
+    background-color: #302a27;          /* Warna latar belakang cokelat pekat gelap */
+    color: white;                       /* Warna teks utama putih */
+}
+
+/* Dekorasi Teks Simbol di Penutup */
+.ending-decoration {
+    color: #e8cfc6;                     /* Warna dekorasi krem terang */
+    font-size: 25px;                    /* Ukuran font dekorasi */
+    letter-spacing: 10px;               /* Jarak antar simbol dekorasi */
+}
+
+/* Judul Utama Seksi Penutup */
+.about-ending h2 {
+    margin-top: 30px;                   /* Jarak atas judul dari dekorasi */
+
+    font-family: Georgia, serif;        /* Jenis font judul penutup */
+    font-size: 65px;                    /* Ukuran font judul penutup */
+    font-weight: normal;                /* Berat huruf normal */
+    line-height: 1;                     /* Rapat baris judul */
+}
+
+/* Cetak Miring pada Judul Penutup */
+.about-ending h2 i {
+    color: #e8cfc6;                     /* Warna teks cetak miring krem terang */
+}
+
+/* Paragraf Deskripsi Penutup */
+.about-ending p {
+    margin-top: 25px;                   /* Jarak atas paragraf dari judul */
+    color: #c8bbb4;                     /* Warna teks paragraf krem lembut */
+}
+
+/* Tombol Belanja Sekarang di Penutup */
+.shop-button {
+    display: inline-block;              /* Format elemen blok segaris */
+
+    margin-top: 30px;                   /* Jarak atas tombol dari paragraf */
+
+    padding: 15px 22px;                 /* Jarak dalam tombol */
+
+    border: 1px solid #a9958c;          /* Garis pinggir tipis tombol */
+    border-radius: 7px;                 /* Sudut tombol melengkung halus */
+
+    color: white;                       /* Warna teks tombol putih */
+    text-decoration: none;              /* Menghapus garis bawah tautan */
+
+    font-size: 10px;                    /* Ukuran font tombol */
+    letter-spacing: 1.5px;              /* Jarak antar huruf pada tombol */
+}
+
+/* Footer Khusus Halaman About */
+.about-footer {
+    padding: 40px 7%;                   /* Jarak dalam footer about */
+
+    background-color: #302a27;          /* Warna latar belakang footer cokelat gelap */
+    color: #c8bbb4;                     /* Warna teks footer krem lembut */
+
+    border-top: 1px solid #514641;      /* Garis pembatas tipis di atas footer */
+
+    display: flex;                      /* Flexbox untuk menata elemen footer sejajar */
+    justify-content: space-between;     /* Jarak merata antar elemen footer */
+    align-items: center;                /* Menyejajarkan elemen di tengah vertikal */
+
+    gap: 20px;                          /* Jarak antar kelompok elemen footer */
+}
+
+/* Teks Brand/Logo Pertama di Footer */
+.about-footer > div:first-child {
+    color: white;                       /* Warna teks brand putih */
+    font-size: 20px;                    /* Ukuran font teks brand */
+    letter-spacing: 4px;                /* Jarak antar huruf teks brand */
+}
+
+/* Paragraf Teks Footer */
+.about-footer p {
+    font-size: 11px;                    /* Ukuran font paragraf footer */
+}
+
+/* Wadah Tautan Media Sosial */
+.social-links {
+    display: flex;                      /* Menyusun tautan media sosial secara horizontal */
+    gap: 15px;                          /* Jarak antar tautan media sosial */
+}
+
+/* Tautan Media Sosial */
+.social-links a {
+    color: #e8d8d1;                     /* Warna teks tautan sosial krem muda */
+    text-decoration: none;              /* Menghapus garis bawah tautan */
+    font-size: 11px;                    /* Ukuran font tautan media sosial */
+}
+
+/* Teks Hak Cipta Kecil di Footer */
+.about-footer small {
+    color: #8f827b;                     /* Warna teks hak cipta pudar */
+}
